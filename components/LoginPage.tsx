@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View ,Image, ImageBackground, TextInput,TouchableOpacity} from 'react-native';
-import loginImage from './assets/login.png';
-import blackBackgroundImage from './assets/pngtree-china-import-expo-creative-poster-image_197057.jpg';
+import loginImage from '../assets/login.png';
+import blackBackgroundImage from '../assets/pngtree-china-import-expo-creative-poster-image_197057.jpg';
 
 export default function LoginPage() {
   return (
