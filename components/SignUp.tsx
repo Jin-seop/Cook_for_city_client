@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View ,Image, ImageBackground, TextInput,TouchableOpacity} from 'react-native';
-import SignupImage from './assets/SignUp.png';
-import WhiteBackgroundImage from './assets/city_white.jpg';
+import SignupImage from '../assets/SignUp.png';
+import WhiteBackgroundImage from '../assets/city_white.jpg';
 
 export default function SignUp() {
   return (
@@ -13,7 +13,7 @@ export default function SignUp() {
       <TextInput autoCompleteType='username' defaultValue='아이디'/>
       <TouchableOpacity><Text>중복확인</Text></TouchableOpacity> 
       <TextInput autoCompleteType='password' defaultValue='비밀번호'/>
-      <TextInput autoCompleteType='passwordcheck' defaultValue='비밀번호 재확인'/>
+      <TextInput autoCompleteType='password' defaultValue='비밀번호 재확인'/>
       <TextInput autoCompleteType='email' defaultValue='email 입력'/>
     </View>
     <View>
