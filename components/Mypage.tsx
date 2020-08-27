@@ -21,10 +21,10 @@ export default function Mypage() {
       <Text>내가 준 별점</Text>
     </View> 
     <View>
-    <TouchableOpacity><Text>내 정보 수정하기</Text></TouchableOpacity> 
+      <TouchableOpacity><Text>내 정보 수정하기</Text></TouchableOpacity> 
     </View>
     <View>
-    <TouchableOpacity><Text>회원 탈퇴</Text></TouchableOpacity> 
+      <TouchableOpacity><Text>회원 탈퇴</Text></TouchableOpacity> 
     </View>
   </ImageBackground>
 );
