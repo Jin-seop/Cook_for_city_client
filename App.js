@@ -11,6 +11,7 @@ export default function App() {
   );	
 }	
 
+<<<<<<< HEAD
 const styles = StyleSheet.create({	
   container: {	
     flex: 1,	
@@ -18,4 +19,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',	
     justifyContent: 'center',	
   },	
+=======
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+>>>>>>> dbf146d65f7eed4c80a235c585fc4fa3a89186f9
 });
