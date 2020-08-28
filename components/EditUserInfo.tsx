@@ -16,8 +16,8 @@ export default function EditUserInfo() {
         <TextInput autoCompleteType='email' defaultValue='Email 주소'/>
       </View>
       <View>
-      <TouchableOpacity><Text>수정하기</Text></TouchableOpacity>
-      <TouchableOpacity><Text>뒤로가기</Text></TouchableOpacity>
+        <TouchableOpacity><Text>수정하기</Text></TouchableOpacity>
+        <TouchableOpacity><Text>뒤로가기</Text></TouchableOpacity>
       </View>
     </ImageBackground>
   );  
