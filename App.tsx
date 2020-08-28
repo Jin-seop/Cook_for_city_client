@@ -8,6 +8,7 @@ import SignUp from './components/SignUp';
 import MoveDoSiIn from './components/MoveDoSiIn';
 import Comment from './components/Comment';
 import MainPage from './components/MainPage';
+import EditUserInfo from './components/EditUserInfo'
 
 const Route = createStackNavigator({
   LoginPage:{
@@ -15,6 +16,9 @@ const Route = createStackNavigator({
   },
   Mypage:{
     screen:Mypage
+  },
+  EditUserInfo:{
+    screen:EditUserInfo
   },
   PostPage:{
     screen:PostPage
