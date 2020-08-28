@@ -11,7 +11,7 @@ import MainPage from './components/MainPage';
 
 const Route = createStackNavigator({
   LoginPage:{
-    screen:MainPage
+    screen:LoginPage
   },
   Mypage:{
     screen:Mypage
