@@ -9,7 +9,16 @@ import SignUp from './components/SignUp';
 
 const Route = createStackNavigator({
   LoginPage:{
+    screen:LoginPage
+  },
+  Mypage:{
+    screen:Mypage
+  },
+  PostPage:{
     screen:PostPage
+  },
+  SignUp:{
+    screen:SignUp
   }
 },{
   defaultNavigationOptions: {
