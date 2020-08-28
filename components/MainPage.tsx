@@ -19,7 +19,7 @@ export default function MainPage() {
         <TouchableOpacity style={style.serchButton}><Text>검색</Text></TouchableOpacity>
       </View>
       <ScrollView style={style.mainContentsWrapper}>
-        <View style={style.contentAlign}>
+        <View>
           <TouchableOpacity style={style.content}>
             <Text>레시피1</Text>
           </TouchableOpacity>
