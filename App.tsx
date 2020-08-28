@@ -7,6 +7,7 @@ import PostPage from './components/PostPage';
 import SignUp from './components/SignUp';
 import MoveDoSiIn from './components/MoveDoSiIn';
 import Comment from './components/Comment';
+import MainPage from './components/MainPage';
 
 const Route = createStackNavigator({
   LoginPage:{
@@ -26,6 +27,9 @@ const Route = createStackNavigator({
   },
   Comment:{
     screen:Comment
+  },
+  MainPage:{
+    screen:MainPage
   }
 },{
   defaultNavigationOptions: {
