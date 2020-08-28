@@ -6,20 +6,22 @@ import blackBackgroundImage from '../assets/pngtree-china-import-expo-creative-p
 export default function LoginPage() {
   return (
     <ImageBackground source={blackBackgroundImage} style={styles.backgroundImg}>
-      <View style={styles.mainLogoWrapper}>
-        <Image source={loginImage} style={styles.mainLogo}></Image>
-      </View>
-      <View style={styles.userNametextWrapper}>
-        <TextInput autoCompleteType='username' placeholder='아이디를 입력해주세요' style={styles.userNameInput}/>
-      </View>
-      <View style={styles.userPasswordtextWrapper}>
-        <TextInput autoCompleteType='password' placeholder='비밀번호를 입력해주세요'style={styles.userPasswordInput}/> 
-      </View>
-      <View style={styles.LoginbuttonWrapper}>
-        <TouchableOpacity style={styles.button}><Text>로그인</Text></TouchableOpacity>
-      </View>
-      <View style={styles.SignUpbuttonWrapper}>
-        <TouchableOpacity style={styles.button}><Text>회원가입</Text></TouchableOpacity>
+      <View style={styles.align}>
+        <View style={styles.mainLogoWrapper}>
+          <Image source={loginImage} style={styles.mainLogo}></Image>
+        </View>
+        <View style={styles.userNametextWrapper}>
+          <TextInput autoCompleteType='username' placeholder='아이디를 입력해주세요' style={styles.userNameInput}/>
+        </View>
+        <View style={styles.userPasswordtextWrapper}>
+         <TextInput autoCompleteType='password' placeholder='비밀번호를 입력해주세요'style={styles.userPasswordInput}/> 
+        </View>
+        <View style={styles.LoginbuttonWrapper}>
+          <TouchableOpacity style={styles.button}><Text>로그인</Text></TouchableOpacity>
+        </View>
+        <View style={styles.SignUpbuttonWrapper}>
+          <TouchableOpacity style={styles.button}><Text>회원가입</Text></TouchableOpacity>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     top:-70,
   },
   userNameInput:{
-    width:'100%',
+    width:200,
     height:40,
     borderStyle:'solid',
     borderColor:'black',
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
     opacity:0.5
   },
   userPasswordInput:{
-    width:'100%',
+    width:200,
     height:40,
     borderStyle:'solid',
     borderColor:'black',
@@ -93,5 +95,10 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     marginBottom:10
-  }
+  },
+  align: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
 });
