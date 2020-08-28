@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View ,Image, ImageBackground, TextInput,TouchableOpacity} from 'react-native';
 import loginImage from '../assets/login.png';
-import blackBackgroundImage from '../assets/pngtree-china-import-expo-creative-poster-image_197057.jpg';
+import blackBackgroundImage from '../assets/blackBackground.jpg';
 
 export default function LoginPage() {
   return (
@@ -10,16 +10,12 @@ export default function LoginPage() {
         <View style={styles.mainLogoWrapper}>
           <Image source={loginImage} style={styles.mainLogo}></Image>
         </View>
-        <View style={styles.userNametextWrapper}>
-          <TextInput autoCompleteType='username' placeholder='아이디를 입력해주세요' style={styles.userNameInput}/>
-        </View>
-        <View style={styles.userPasswordtextWrapper}>
-         <TextInput autoCompleteType='password' placeholder='비밀번호를 입력해주세요'style={styles.userPasswordInput}/> 
+        <View style={styles.inputWrapper}>
+          <TextInput autoCompleteType='username' placeholder='아이디를 입력해주세요' style={styles.Input}/>
+          <TextInput autoCompleteType='password' placeholder='비밀번호를 입력해주세요'style={styles.Input}/> 
         </View>
         <View style={styles.LoginbuttonWrapper}>
           <TouchableOpacity style={styles.button}><Text>로그인</Text></TouchableOpacity>
-        </View>
-        <View style={styles.SignUpbuttonWrapper}>
           <TouchableOpacity style={styles.button}><Text>회원가입</Text></TouchableOpacity>
         </View>
       </View>
@@ -34,26 +30,29 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center'
   },
+  align: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
   mainLogoWrapper:{
     width:250,
     height:180,
-    top:-70
+    top:-60
   },
   mainLogo:{
     width:'100%',
-    height:'100%'
+    height:'100%',
+    borderRadius:5
   },
-  userNametextWrapper:{
-    width:'50%',
-    height:'15%',
+  inputWrapper:{
+    width:250,
+    height:150,
     top:-30,
+    alignContent:'center',
+    justifyContent:'center',
   },
-  userPasswordtextWrapper:{
-    width:'50%',
-    height:'15%',
-    top:-70,
-  },
-  userNameInput:{
+  Input:{
     width:200,
     height:40,
     borderStyle:'solid',
@@ -62,28 +61,16 @@ const styles = StyleSheet.create({
     borderRadius:5,
     backgroundColor:'white',
     padding:10,
-    opacity:0.5
-  },
-  userPasswordInput:{
-    width:200,
-    height:40,
-    borderStyle:'solid',
-    borderColor:'black',
-    borderWidth:1,
-    borderRadius:5,
-    backgroundColor:'white',
-    marginBottom:10,
-    padding:10,
-    opacity:0.5
+    marginLeft:25,
+    marginBottom:10
   },
   LoginbuttonWrapper:{
-    position:'absolute',
-    width:200,
-    top:450,
+    position:'relative',
+    width:200
   },
   SignUpbuttonWrapper:{
     position:'absolute',
-    width:200,
+    width:20,
     top:530,
   },
   button:{
@@ -96,9 +83,5 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     marginBottom:10
   },
-  align: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center' 
-  },
+  
 });
