@@ -10,10 +10,10 @@ export default function LoginPage() {
         <Image source={loginImage} style={styles.mainLogo}></Image>
       </View>
       <View style={styles.userNametextWrapper}>
-        <TextInput autoCompleteType='username' defaultValue='아이디를 입력해주세요' style={styles.userNameInput}/>
+        <TextInput autoCompleteType='username' placeholder='아이디를 입력해주세요' style={styles.userNameInput}/>
       </View>
       <View style={styles.userPasswordtextWrapper}>
-        <TextInput autoCompleteType='password' defaultValue='비밀번호를 입력해주세요'style={styles.userPasswordInput}/> 
+        <TextInput autoCompleteType='password' placeholder='비밀번호를 입력해주세요'style={styles.userPasswordInput}/> 
       </View>
       <View style={styles.LoginbuttonWrapper}>
         <TouchableOpacity style={styles.button}><Text>로그인</Text></TouchableOpacity>

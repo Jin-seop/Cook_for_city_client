@@ -13,10 +13,10 @@ export default function MainPage() {
         <TouchableOpacity style={style.menuButton}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
       </View>
       <View style={style.serchbar} >
-        <TextInput  style={style.serchInput}/>
+        <TextInput  style={style.serchInput} placeholder="검색" />
       </View>
       <View style={style.serchButtonWrapper}>
-        <TouchableOpacity style={style.serchButton}><Text>검색</Text></TouchableOpacity>
+        <TouchableOpacity style={style.serchButton} ><Text>검색</Text></TouchableOpacity>
       </View>
       <ScrollView style={style.mainContentsWrapper}>
         <View>

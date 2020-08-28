@@ -10,11 +10,11 @@ export default function SignUp() {
         <Image source={SignupImage} style={style.mainLogo}></Image>
       </View>
       <View style={style.textWrapper}>
-        <TextInput autoCompleteType='username' defaultValue='아이디'style={style.userNameInput} />
+        <TextInput autoCompleteType='username' placeholder='아이디'style={style.userNameInput} />
         <TouchableOpacity style={style.checkButton}><Text>중복확인</Text></TouchableOpacity> 
-        <TextInput autoCompleteType='password' defaultValue='비밀번호'style={style.userPasswordInput} />
-        <TextInput autoCompleteType='password' defaultValue='비밀번호 재확인' style={style.userPasswordInput} />
-        <TextInput autoCompleteType='email' defaultValue='email 입력' style={style.userPasswordInput}/>
+        <TextInput autoCompleteType='password' placeholder='비밀번호'style={style.userPasswordInput} />
+        <TextInput autoCompleteType='password' placeholder='비밀번호 재확인' style={style.userPasswordInput} />
+        <TextInput autoCompleteType='email' placeholder='email 입력' style={style.userPasswordInput}/>
       </View>
       <View style={style.buttonWrapper}>
         <TouchableOpacity style={style.button}><Text>가입하기</Text></TouchableOpacity>
