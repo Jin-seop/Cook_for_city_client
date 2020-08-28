@@ -7,9 +7,9 @@ export default function Mypage() {
   return (
     <ImageBackground source={WhiteBackgroundImage} style={{width:'100%',height:'100%'}}>
     <View>
-     <TouchableOpacity><Text>메뉴</Text></TouchableOpacity> 
-     <TouchableOpacity><Text>메인페이지</Text></TouchableOpacity> 
-     <TouchableOpacity><Text>로그아웃</Text></TouchableOpacity> 
+      <TouchableOpacity><Text>메뉴</Text></TouchableOpacity> 
+      <TouchableOpacity><Text>메인페이지</Text></TouchableOpacity> 
+      <TouchableOpacity><Text>로그아웃</Text></TouchableOpacity> 
     </View>
     <View >
       <Image source={MypageImage}></Image>
