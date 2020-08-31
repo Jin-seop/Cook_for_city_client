@@ -7,32 +7,32 @@ export default function Mypage() {
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
-       <View style={style.sideButtons}>
-         <TouchableOpacity style={style.sideButton}>
-           <Text>메뉴</Text>
-         </TouchableOpacity> 
-         <TouchableOpacity style={style.sideButton}>
-           <Text style={style.sideButtonText}>메인페이지</Text>
-         </TouchableOpacity> 
-         <TouchableOpacity style={style.sideButton}>
-           <Text style={style.sideButtonText}>로그아웃</Text>
-         </TouchableOpacity> 
-       </View>
-       <View style={style.mainLogoWrapper}>
-         <Image source={MypageImage} style={style.mainLogo}></Image> 
-       </View>
-       <View style={style.myfavoritesBox}>
-         <Text style={style.aligntext}>내 즐겨찾기</Text>
-       </View>
-       <View style={style.mystarBox}>
-         <Text style={style.aligntext}>내가 준 별점</Text>
-       </View> 
-       <View style={style.editButtonWrapper}>
-         <TouchableOpacity style={style.button}><Text>내 정보 수정하기</Text></TouchableOpacity> 
-       </View>
-       <View style={style.buttonWrapper}>
-         <TouchableOpacity style={style.button}><Text>회원 탈퇴</Text></TouchableOpacity> 
-       </View>
+        <View style={style.sideButtons}>
+          <TouchableOpacity style={style.sideButton}>
+            <Text>메뉴</Text>
+          </TouchableOpacity> 
+          <TouchableOpacity style={style.sideButton}>
+            <Text style={style.sideButtonText} onPress={()=> props.navigation.navigate(MainPage)}>메인페이지</Text>
+          </TouchableOpacity> 
+          <TouchableOpacity style={style.sideButton} onPress={()=> props.navigation.navigate(LoginPage)}>
+            <Text style={style.sideButtonText} >로그아웃</Text>
+          </TouchableOpacity> 
+        </View>
+        <View style={style.mainLogoWrapper}>
+          <Image source={MypageImage} style={style.mainLogo}></Image> 
+        </View>
+        <View style={style.myfavoritesBox}>
+          <Text style={style.aligntext}>내 즐겨찾기</Text>
+        </View>
+        <View style={style.mystarBox}>
+          <Text style={style.aligntext}>내가 준 별점</Text>
+        </View> 
+        <View style={style.editButtonWrapper}>
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate(EditUserInfo)}><Text>내 정보 수정하기</Text></TouchableOpacity> 
+        </View>
+        <View style={style.buttonWrapper}>
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate(LoginPage)}><Text>회원 탈퇴</Text></TouchableOpacity> 
+        </View>
       </View>
     </ImageBackground>
   );

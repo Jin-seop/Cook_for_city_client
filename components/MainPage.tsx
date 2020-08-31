@@ -8,9 +8,9 @@ export default function MainPage() {
     <ImageBackground source={cityWhite} style={style.background}>
       <View style={style.menuWrapper}>
         <Text style={style.menuText}>메뉴</Text>
-        <TouchableOpacity style={style.menuButton}><Text style={style.menuButtonText}>DO.SI.IN</Text></TouchableOpacity>
-        <TouchableOpacity style={style.menuButton}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
-        <TouchableOpacity style={style.menuButton}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(MoveDoSiIn)}><Text style={style.menuButtonText}>DO.SI.IN</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(MyPage)}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(LoginPage)}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
       </View>
       <View style={style.serchbar} >
         <TextInput  style={style.serchInput} placeholder="검색" />
@@ -20,7 +20,7 @@ export default function MainPage() {
       </View>
       <ScrollView style={style.mainContentsWrapper}>
         <View>
-          <TouchableOpacity style={style.content}>
+          <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate(PostPage)}>
             <Text>레시피1</Text>
           </TouchableOpacity>
           <TouchableOpacity style={style.content}>

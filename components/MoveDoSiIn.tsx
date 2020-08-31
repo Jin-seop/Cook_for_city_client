@@ -16,7 +16,7 @@ export default function MoveDoSiIn() {
           <TouchableOpacity style={style.button}>
             <Text>DO.SI.IN으로 이동</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.button}>
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.goback()}>
             <Text>취소</Text>
           </TouchableOpacity>
         </View>

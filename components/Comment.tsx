@@ -10,13 +10,13 @@ export default function Comment() {
           <Text style={style.starRatinTitleText}>별점</Text>
           <View style={style.starbuttonWrapper}>
             <TouchableOpacity>
-             <Text style={style.starButtonText}>★</Text>
+              <Text style={style.starButtonText}>★</Text>
             </TouchableOpacity>
             <TouchableOpacity>
               <Text style={style.starButtonText}>★</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-             <Text style={style.starButtonText}>★</Text>
+              <Text style={style.starButtonText}>★</Text>
             </TouchableOpacity>
             <TouchableOpacity>
               <Text style={style.starButtonText}>★</Text>
@@ -29,16 +29,16 @@ export default function Comment() {
             <TextInput placeholder='댓글' />
           </View>
           <View style={style.buttonWrapper}>
-            <TouchableOpacity style={style.button}>
+            <TouchableOpacity style={style.button} onPress={()=> props.navigation.goback()}>
               <Text>등록</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={style.button}>
+            <TouchableOpacity style={style.button} onPress={()=> props.navigation.goback()}>
               <Text>취소</Text>
             </TouchableOpacity>
           </View>
         </View>
-       </View>
       </View>
+    </View>
   );
 }
 const style = StyleSheet.create({

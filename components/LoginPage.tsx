@@ -47,7 +47,7 @@ export default function LoginPage(props) {
               e.preventDefault();
               setUserId(e.nativeEvent.text);
             }}
-            />
+          />
           <TextInput 
             placeholder='비밀번호를 입력해주세요'
             style={styles.Input}
@@ -55,7 +55,7 @@ export default function LoginPage(props) {
               e.preventDefault();
               setUserPassword(e.nativeEvent.text);
             }}
-            /> 
+          /> 
         </View>
         <View style={styles.LoginbuttonWrapper}>
           <TouchableOpacity 
@@ -68,7 +68,7 @@ export default function LoginPage(props) {
           </TouchableOpacity>
           <TouchableOpacity 
             style={styles.button}
-            onPress={() => {props.navigation.navigate('SignUp')
+            onPress={() => {props.navigation.navigate('SignUp');
             }}
           >
             <Text>회원가입</Text>
