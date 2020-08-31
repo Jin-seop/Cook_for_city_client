@@ -8,11 +8,10 @@ import blackBackgroundImage from '../assets/blackBackground.jpg';
 export default function LoginPage(props) {
   const [userId, setUserId] = useState('');
   const [userPassword, setUserPassword] = useState('');
-
   const userInfoHandler = () => {
     axios
       .post(
-        'http://52.79.251.147:5000/signin',
+        'http://52.78.146.191:5000/a',
         {
           userId,
           password: userPassword,
@@ -25,11 +24,13 @@ export default function LoginPage(props) {
         }
       )
       .then(function (res) {
-        if (res.status === 201) {
+        console.log(res);
+        if (res.status === 200) {
           props.navigation.navigate('MainPage', { userId });
         }
       })
       .catch(function (err) {
+        console.log(err);
         alert('유저 정보가 없습니다.');
       });
   }; 

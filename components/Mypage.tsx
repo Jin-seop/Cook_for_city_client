@@ -3,7 +3,7 @@ import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity } from 
 import MypageImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 
-export default function Mypage() {
+export default function Mypage(props) {
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
@@ -12,9 +12,9 @@ export default function Mypage() {
             <Text>메뉴</Text>
           </TouchableOpacity> 
           <TouchableOpacity style={style.sideButton}>
-            <Text style={style.sideButtonText} onPress={()=> props.navigation.navigate(MainPage)}>메인페이지</Text>
+            <Text style={style.sideButtonText} onPress={()=> props.navigation.navigate('MainPage')}>메인페이지</Text>
           </TouchableOpacity> 
-          <TouchableOpacity style={style.sideButton} onPress={()=> props.navigation.navigate(LoginPage)}>
+          <TouchableOpacity style={style.sideButton} onPress={()=> props.navigation.navigate('LoginPage')}>
             <Text style={style.sideButtonText} >로그아웃</Text>
           </TouchableOpacity> 
         </View>
@@ -28,10 +28,10 @@ export default function Mypage() {
           <Text style={style.aligntext}>내가 준 별점</Text>
         </View> 
         <View style={style.editButtonWrapper}>
-          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate(EditUserInfo)}><Text>내 정보 수정하기</Text></TouchableOpacity> 
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('EditUserInfo')}><Text>내 정보 수정하기</Text></TouchableOpacity> 
         </View>
         <View style={style.buttonWrapper}>
-          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate(LoginPage)}><Text>회원 탈퇴</Text></TouchableOpacity> 
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('LoginPage')}><Text>회원 탈퇴</Text></TouchableOpacity> 
         </View>
       </View>
     </ImageBackground>

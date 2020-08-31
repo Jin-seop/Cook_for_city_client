@@ -3,14 +3,15 @@ import { View, Text, ImageBackground,StyleSheet } from 'react-native';
 import { TouchableOpacity, TextInput, ScrollView } from 'react-native-gesture-handler';
 import cityWhite from '../assets/city_white.jpg';
 
-export default function MainPage() {
+
+export default function MainPage(props) {
   return(
     <ImageBackground source={cityWhite} style={style.background}>
       <View style={style.menuWrapper}>
         <Text style={style.menuText}>메뉴</Text>
-        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(MoveDoSiIn)}><Text style={style.menuButtonText}>DO.SI.IN</Text></TouchableOpacity>
-        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(MyPage)}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
-        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(LoginPage)}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}><Text style={style.menuButtonText}>DO.SI.IN</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage')}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('LoginPage')}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
       </View>
       <View style={style.serchbar} >
         <TextInput  style={style.serchInput} placeholder="검색" />
