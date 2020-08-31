@@ -3,7 +3,7 @@ import { StyleSheet, Text, View ,Image, ImageBackground, TextInput,TouchableOpac
 import EditUserInfoImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 
-export default function EditUserInfo() {
+export default function EditUserInfo(props) {
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
@@ -19,8 +19,8 @@ export default function EditUserInfo() {
           <TextInput autoCompleteType='email' placeholder='Email 주소'style={style.Input}/>
         </View>
         <View style={style.buttonWrapper}>
-          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate(Mypage)}><Text>수정하기</Text></TouchableOpacity>
-          <TouchableOpacity style={style.button}onPress={()=> props.navigation.goback()} ><Text>뒤로가기</Text></TouchableOpacity>
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('Mypage')}><Text>수정하기</Text></TouchableOpacity>
+          <TouchableOpacity style={style.button}onPress={()=> props.navigation.goBack()} ><Text>뒤로가기</Text></TouchableOpacity>
         </View>
       </View>
     </ImageBackground>

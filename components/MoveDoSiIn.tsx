@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function MoveDoSiIn() {
+export default function MoveDoSiIn(props) {
   return(
     <View style={style.background}>
       <View style={style.mainWrapper}>
@@ -16,7 +16,7 @@ export default function MoveDoSiIn() {
           <TouchableOpacity style={style.button}>
             <Text>DO.SI.IN으로 이동</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.button} onPress={()=> props.navigation.goback()}>
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.goBack()}>
             <Text>취소</Text>
           </TouchableOpacity>
         </View>

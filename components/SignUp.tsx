@@ -17,8 +17,8 @@ export default function SignUp() {
         <TextInput autoCompleteType='email' placeholder='email 입력' style={style.userPasswordInput}/>
       </View>
       <View style={style.buttonWrapper}>
-        <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate(LoginPage)}><Text>가입하기</Text></TouchableOpacity>
-        <TouchableOpacity style={style.button} onPress={()=> props.navigation.goback()}><Text>뒤로가기</Text></TouchableOpacity>
+        <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('LoginPage')}><Text>가입하기</Text></TouchableOpacity>
+        <TouchableOpacity style={style.button} onPress={()=> props.navigation.goBack()}><Text>뒤로가기</Text></TouchableOpacity>
       </View>
     </ImageBackground>
   );
