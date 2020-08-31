@@ -9,9 +9,9 @@ export default function PostPage () {
       <ScrollView style={style.mainWrapper}>
         <View style={style.menuWrapper}>
           <Text style={style.menuText} >메뉴</Text>      
-          <TouchableOpacity style={style.menuButton} ><Text style={style.menuButtonText}>Do.SI.IN</Text></TouchableOpacity>      
-          <TouchableOpacity style={style.menuButton} ><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>      
-          <TouchableOpacity style={style.menuButton} ><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>      
+          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(MoveDoSiIn)}><Text style={style.menuButtonText}>Do.SI.IN</Text></TouchableOpacity>      
+          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(Mypage)}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>      
+          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate(LoginPage)}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>      
         </View>
         <View style={style.contentWrapper}>
           <View style={style.starWrapper}>
@@ -33,7 +33,7 @@ export default function PostPage () {
             <Text>별점:</Text>
             <Text>-작성자</Text>
             <Text>-댓글</Text>
-            <TouchableOpacity style={style.commentButton}>
+            <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate(Comment)}>
               <Text>수정</Text>
             </TouchableOpacity>
           </View>
