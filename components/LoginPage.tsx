@@ -4,16 +4,18 @@ import { TextInput } from 'react-native-gesture-handler';
 import axios from 'axios';
 import loginImage from '../assets/login.png';
 import blackBackgroundImage from '../assets/blackBackground.jpg';
+import { resolvePreset } from '@babel/core';
 
-export default function LoginPage(props) {
-  const [userId, setUserId] = useState('');
-  const [userPassword, setUserPassword] = useState('');
+export default function LoginPage(props:object) {
+  
+  const [userId, setUserId] = useState<string>('');
+  const [userPassword, setUserPassword] = useState<string>('');
   const userInfoHandler = () => {
     axios
       .post(
-        'http://52.78.146.191:5000/a',
+        'http://52.78.146.191:5000/login/signin',
         {
-          userId,
+          userid : userId,
           password: userPassword,
         },
         {
@@ -23,14 +25,14 @@ export default function LoginPage(props) {
           },
         }
       )
-      .then(function (res) {
-        console.log(res);
+      .then(res => {
+        console.log(res)
         if (res.status === 200) {
           props.navigation.navigate('MainPage', { userId });
         }
       })
-      .catch(function (err) {
-        console.log(err);
+      .catch(err => {
+        console.error(err);
         alert('유저 정보가 없습니다.');
       });
   }; 
@@ -44,7 +46,7 @@ export default function LoginPage(props) {
           <TextInput  
             placeholder='아이디를 입력해주세요' 
             style={styles.Input}
-            onChange={(e) => {
+            onChange={(e:object) => {
               e.preventDefault();
               setUserId(e.nativeEvent.text);
             }}
@@ -52,7 +54,7 @@ export default function LoginPage(props) {
           <TextInput 
             placeholder='비밀번호를 입력해주세요'
             style={styles.Input}
-            onChange={(e) => {
+            onChange={(e:object) => {
               e.preventDefault();
               setUserPassword(e.nativeEvent.text);
             }}
