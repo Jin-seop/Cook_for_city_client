@@ -26,13 +26,11 @@ export default function LoginPage(props:object) {
         }
       )
       .then(res => {
-        console.log(res)
-        if (res.status === 200) {
+        if (res.status === 201) {
           props.navigation.navigate('MainPage', { userId });
         }
       })
       .catch(err => {
-        console.error(err);
         alert('유저 정보가 없습니다.');
       });
   }; 
@@ -53,6 +51,7 @@ export default function LoginPage(props:object) {
           />
           <TextInput 
             placeholder='비밀번호를 입력해주세요'
+            secureTextEntry={true}
             style={styles.Input}
             onChange={(e:object) => {
               e.preventDefault();
