@@ -27,7 +27,7 @@ export default function LoginPage(props:object) {
       )
       .then(res => {
         if (res.status === 201) {
-          props.navigation.navigate('MainPage', { userId });
+          props.navigation.navigate('MainPage');
         }
       })
       .catch(err => {
