@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import { TouchableOpacity, TextInput, ScrollView } from 'react-native-gesture-handler';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
 
 export default function PostPage (props:any) {
+
+  const postDetail = () => {
+    Axios.post('http://52.78.146.191:5000/recipe/recipedetail',{
+      title:props.navigation.state.params.title
+    })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
       .then(res => {
@@ -13,9 +23,12 @@ export default function PostPage (props:any) {
           return alert(res.data);
         }
       }).catch(err => {
+
         console.error(err);
       });
   };
+
+  useEffect(postDetail,[]);
 
 
   return(
