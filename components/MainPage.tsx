@@ -27,9 +27,8 @@ export default function MainPage(props:any) {
       return dataList.map((data:any,key:number) => {
         return (
           <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage')} key={key} >
-            <ImageBackground source={{uri:data.recipe_img}} style={{width:250,height:200,marginBottom:15,alignItems:'center',
-              justifyContent:'center',opacity:0.8}} >
-              <Text style={{fontWeight:"bold",opacity:1,top:50,fontSize:20,backgroundColor:"gray",borderRadius:10,color:'white'}} >{data.title}</Text>
+            <ImageBackground source={{uri:data.recipe_img}} style={style.contentBackgroundImg} >
+              <Text style={style.contentText} >{data.title}</Text>
             </ImageBackground>
           </TouchableOpacity>
         );
@@ -138,5 +137,22 @@ const style = StyleSheet.create({
     marginBottom:15,
     borderRadius:10,
     flex:1,
+  },
+  contentBackgroundImg:{
+    width:250,
+    height:200,
+    marginBottom:15,
+    alignItems:'center',
+    justifyContent:'center',
+    opacity:0.8},
+  contentText:{
+    top:50,
+    fontSize:20,
+    backgroundColor:"gray",
+    color:'white',
+    fontWeight:"bold",
+    borderRadius:10,
+    opacity:1,
   }
+
 });
