@@ -3,7 +3,7 @@ import { StyleSheet, Text, View ,Image, ImageBackground, TextInput,TouchableOpac
 import EditUserInfoImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 
-export default function EditUserInfo(props) {
+export default function EditUserInfo(props:any) {
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>

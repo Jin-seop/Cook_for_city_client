@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function MoveDoSiIn(props) {
+export default function MoveDoSiIn(props:any) {
   return(
     <View style={style.background}>
       <View style={style.mainWrapper}>

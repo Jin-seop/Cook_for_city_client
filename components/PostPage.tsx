@@ -4,7 +4,7 @@ import { TouchableOpacity, TextInput, ScrollView } from 'react-native-gesture-ha
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
 
-export default function PostPage (props:object) {
+export default function PostPage (props:any) {
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
       .then(res => {
@@ -16,6 +16,7 @@ export default function PostPage (props:object) {
         console.error(err);
       });
   };
+
 
   return(
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg} >

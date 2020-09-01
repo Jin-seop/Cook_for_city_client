@@ -4,7 +4,7 @@ import MypageImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
 
-export default function Mypage(props:object) {
+export default function Mypage(props:any) {
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
       .then(res => {
