@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity, Linking } from 'react-native';
 import MypageImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
@@ -24,6 +24,10 @@ export default function Mypage(props:any) {
           <TouchableOpacity style={style.sideButton}>
             <Text>메뉴</Text>
           </TouchableOpacity> 
+          <TouchableOpacity style={style.sideButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}>
+            <Text style={style.sideButtonText}>DO.SI.IN</Text>
+          </TouchableOpacity>
+          
           <TouchableOpacity style={style.sideButton}>
             <Text style={style.sideButtonText} onPress={()=> props.navigation.navigate('MainPage')}>메인페이지</Text>
           </TouchableOpacity> 

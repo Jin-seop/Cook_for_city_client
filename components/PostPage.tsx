@@ -60,9 +60,7 @@ export default function PostPage (props:any) {
       });
   };
 
-
   useEffect(postDetail,[]);
-
 
   return(
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg} >
