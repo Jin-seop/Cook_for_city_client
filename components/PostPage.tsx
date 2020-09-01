@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
-import { TouchableOpacity, TextInput, ScrollView } from 'react-native-gesture-handler';
+import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
 
@@ -38,7 +38,20 @@ export default function PostPage (props:any) {
           alert('즐겨찾기 등록완료');
           setFavorit(true);
         }
-      });
+      })
+        .catch(err => console.error(err));
+    }
+    if(favorit === true){
+      Axios.put('http://52.78.146.191:5000/recipe/recipefavoritesdelete',{
+        id:props.navigation.state.params.id
+      })
+        .then(res => {
+          if(res.status === 200){
+            alert('즐겨찾기가 취소되었습니다.');
+            setFavorit(false);
+          }
+        })
+        .catch(err => console.error(err));
     }
   };
 
@@ -67,7 +80,6 @@ export default function PostPage (props:any) {
           return alert(res.data);
         }
       }).catch(err => {
-
         console.error(err);
       });
   };
@@ -156,7 +168,7 @@ const style = StyleSheet.create({
     left:80,
     backgroundColor:'#F3ECA5',
     padding:20,
-    borderRadius:5
+    borderRadius:5,
   },
   starWrapper:{
     left:200,
@@ -166,7 +178,7 @@ const style = StyleSheet.create({
   },
   postButton:{
     left:170,
-    top:0,
+    top:10,
     borderWidth:1,
     width:80,
     height:30,
