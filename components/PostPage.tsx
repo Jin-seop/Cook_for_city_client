@@ -10,7 +10,8 @@ export default function PostPage (props:any) {
   const [title,setTitle] = useState<string>(''); 
   const [recipe,setRecipe] = useState<string>('');
   const [comments,setComments] = useState([] as any);
- 
+  const [favorit,setFavorit] = useState<boolean>(false);
+
   const postDetail = () => {
     Axios.post('http://52.78.146.191:5000/recipe/recipedetail',{
       title:props.navigation.state.params.title
@@ -74,8 +75,8 @@ export default function PostPage (props:any) {
         </View>
         <View style={style.contentWrapper}>
           <View style={style.starWrapper}>
-            <TouchableOpacity>
-              <Text style={style.starText}>★☆</Text>
+            <TouchableOpacity onPress={()=> setFavorit(!favorit)}>
+              {favorit ? <Text style={style.starText}>★</Text> : <Text style={style.starText}>☆</Text> }
             </TouchableOpacity>
           </View>
           <ScrollView>
