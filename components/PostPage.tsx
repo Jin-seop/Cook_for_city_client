@@ -29,6 +29,18 @@ export default function PostPage (props:any) {
         console.error(err);
       });
   };
+  const favoritHandler =()=>{
+    if(favorit === false){
+      Axios.post('http://52.78.146.191:5000/recipe/recipefavorites',{
+        id:props.navigation.state.params.id
+      }).then(res => {
+        if(res.status === 201){
+          alert('즐겨찾기 등록완료');
+          setFavorit(true);
+        }
+      });
+    }
+  };
 
   const commentsHandler:any = () => {
     if(comments.length > 0){
@@ -73,7 +85,7 @@ export default function PostPage (props:any) {
         </View>
         <View style={style.contentWrapper}>
           <View style={style.starWrapper}>
-            <TouchableOpacity onPress={()=> setFavorit(!favorit)}>
+            <TouchableOpacity onPress={()=> favoritHandler()}>
               {favorit ? <Text style={style.starText}>★</Text> : <Text style={style.starText}>☆</Text> }
             </TouchableOpacity>
           </View>
