@@ -10,7 +10,8 @@ export default function MainPage(props:any) {
   const [dataList,setDataList] = useState([] as any);
   const [preSerch,setPreSerch] = useState<string>("");
   const [sessonList,setSessonList] = useState([] as any);
-  
+  const [userid,setUserid] = useState<string>("");
+
   const serchListHandler:any = () => {
     if(preSerch !== serch){
       setPreSerch(serch);
@@ -27,7 +28,7 @@ export default function MainPage(props:any) {
     if(dataList.length > 0){
       return dataList.map((data:any,key:number) => {
         return (
-          <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage',{title:data.title,id:data.id})} key={key} >
+          <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage',{title:data.title,id:data.id,userid})} key={key} >
             <ImageBackground source={{uri:data.recipe_img}} style={style.contentBackgroundImg} >
               <Text style={style.contentText} >{data.title}</Text>
             </ImageBackground>
@@ -67,6 +68,12 @@ export default function MainPage(props:any) {
         console.error(err);
       });
   };
+
+  useEffect(()=> {
+    if(props.navigation.state.params)
+    {setUserid(props.navigation.state.params.userId);}
+  },[]);
+
   return(
     <ImageBackground  source={cityWhite} style={style.background}>
       <View style={style.menuWrapper}>

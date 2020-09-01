@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity, Linking, Alert } from 'react-native';
 import MypageImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
-import { TextInput } from 'react-native-gesture-handler';
 
 export default function Mypage(props:any) {
 
-
+  
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
       .then(res => {
