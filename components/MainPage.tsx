@@ -9,6 +9,7 @@ export default function MainPage(props:any) {
   const [serch,setSerch] = useState<string>("");
   const [dataList,setDataList] = useState([] as any);
   const [preSerch,setPreSerch] = useState<string>("");
+  const [sessonList,setSessonList] = useState([] as any);
   
   const serchListHandler:any = () => {
     if(preSerch !== serch){
@@ -36,14 +37,43 @@ export default function MainPage(props:any) {
     }
   };
 
+  const seasonListHandler = () => {
+    if(sessonList.length === 0 || sessonList !== sessonList){
+      Axios.get('http://52.78.146.191:5000/recipe/materials')
+        .then(res => {
+          setSessonList(res.data);
+        });
+    }
 
+    return sessonList.map((listItem:string,key:number) => {
+      return (
+        <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage')} key={key} >
+          <ImageBackground style={style.contentBackgroundImg} >
+            <Text style={style.contentText} >{listItem}</Text>
+          </ImageBackground>
+        </TouchableOpacity>
+      );
+    });
+  };
+
+  const logoutHandler = () => {
+    Axios.post('http://52.78.146.191:5000/login/signout')
+      .then(res => {
+        if(res.status === 200){
+          props.navigation.navigate('LoginPage');
+          return alert(res.data);
+        }
+      }).catch(err => {
+        console.error(err);
+      });
+  };
   return(
     <ImageBackground  source={cityWhite} style={style.background}>
       <View style={style.menuWrapper}>
         <Text style={style.menuText}>메뉴</Text>
         <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}><Text style={style.menuButtonText}>DO.SI.IN</Text></TouchableOpacity>
         <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage')}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
-        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('LoginPage')}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> logoutHandler()}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
       </View>
       <View style={style.serchbar} >
         <TextInput  style={style.serchInput} placeholder="검색" onChange={e => {
@@ -55,7 +85,7 @@ export default function MainPage(props:any) {
       </View>
       <ScrollView style={style.mainContentsWrapper}>
         <View>
-          {serch ? serchListHandler() : <Text>1</Text>}
+          {serch ? serchListHandler() : seasonListHandler()}
         </View>
       </ScrollView>
     </ImageBackground>
