@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import { TouchableOpacity, TextInput, ScrollView } from 'react-native-gesture-handler';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
@@ -6,18 +6,47 @@ import Axios from 'axios';
 
 export default function PostPage (props:any) {
 
+  const [meterial,setMeterial] = useState<string>('');
+  const [title,setTitle] = useState<string>(''); 
+  const [recipe,setRecipe] = useState<string>('');
+  const [comments,setComments] = useState([] as any);
+  const [favorit,setFavorit] = useState<boolean>(false);
+
   const postDetail = () => {
     Axios.post('http://52.78.146.191:5000/recipe/recipedetail',{
       title:props.navigation.state.params.title
     })
-      .then(res => {
-        console.log(res);
+      .then(res => 
+        res.data
+      )
+      .then(data => {
+        setMeterial(data.meterial.replace(/(\s*)/g, ""));
+        setTitle(data.title);
+        setRecipe(data.recipe.trim());
+        setComments(data.comments);
       })
       .catch(err => {
         console.error(err);
       });
   };
 
+  const commentsHandler:any = () => {
+    if(comments.length > 0){
+      // return comments.map((el,key) => {
+      // return (
+      // <View style={style.comment} key={key}>
+      //   <Text>별점:</Text>
+      //   <Text>-작성자</Text>
+      //   <Text>-댓글</Text>
+      //   <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate(Comment)}>
+      //     <Text>수정</Text>
+      //   </TouchableOpacity>
+      // </View>
+      // );
+      // });
+    }
+  };
+  
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
       .then(res => {
@@ -30,6 +59,8 @@ export default function PostPage (props:any) {
         console.error(err);
       });
   };
+
+
   useEffect(postDetail,[]);
 
 
@@ -44,13 +75,19 @@ export default function PostPage (props:any) {
         </View>
         <View style={style.contentWrapper}>
           <View style={style.starWrapper}>
-            <TouchableOpacity>
-              <Text style={style.starText}>★☆</Text>
+            <TouchableOpacity onPress={()=> setFavorit(!favorit)}>
+              {favorit ? <Text style={style.starText}>★</Text> : <Text style={style.starText}>☆</Text> }
             </TouchableOpacity>
           </View>
           <ScrollView>
-            <View>
-              <Text>게시글</Text>
+            <View style={style.recipeTitleWrapper}>
+              <Text style={style.recipeTitleText} >{title}</Text>
+            </View>
+            <View style={style.recipeWrapper} >
+              <Text>재료 : {meterial}</Text>
+            </View>
+            <View style={style.recipeWrapper} >
+              <Text>레시피 : {recipe}</Text>
             </View>
           </ScrollView>
           <TouchableOpacity style={style.postButton}>
@@ -58,36 +95,7 @@ export default function PostPage (props:any) {
           </TouchableOpacity>
         </View>
         <View style={style.commentWrapper}>
-          <View style={style.comment}>
-            <Text>별점:</Text>
-            <Text>-작성자</Text>
-            <Text>-댓글</Text>
-            <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate(Comment)}>
-              <Text>수정</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={style.comment}>
-            <Text>별점:</Text>
-            <Text>-작성자</Text>
-            <Text>-댓글</Text>
-            <TouchableOpacity style={style.commentButton}>
-              <Text>수정</Text>
-            </TouchableOpacity>
-          </View><View style={style.comment}>
-            <Text>별점:</Text>
-            <Text>-작성자</Text>
-            <Text>-댓글</Text>
-            <TouchableOpacity style={style.commentButton}>
-              <Text>수정</Text>
-            </TouchableOpacity>
-          </View><View style={style.comment}>
-            <Text>별점:</Text>
-            <Text>-작성자</Text>
-            <Text>-댓글</Text>
-            <TouchableOpacity style={style.commentButton}>
-              <Text>수정</Text>
-            </TouchableOpacity>
-          </View>
+          {commentsHandler()}
         </View>
       </ScrollView>
     </ImageBackground>
@@ -178,5 +186,23 @@ const style = StyleSheet.create({
     width:30,
     borderRadius:5,
     borderWidth:1
+  },
+  recipeTitleWrapper:{
+    backgroundColor:'white',
+    width:100,
+    alignItems:'center',
+    marginBottom:20,
+    borderRadius:5
+  },
+  recipeWrapper:{
+    backgroundColor:'white',
+    width:230,
+    alignItems:'center',
+    justifyContent:'center',
+    marginBottom:20,
+    borderRadius:5,
+  },
+  recipeTitleText:{
+    fontSize:20
   }
 });
