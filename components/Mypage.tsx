@@ -20,21 +20,6 @@ export default function Mypage(props:any) {
       });
   };
 
-  const deleteUserHandler = () => {
-    Axios.patch('http://52.78.146.191:5000/recipe/recipecomment',{
-      userid:userId,
-      password,
-      email
-    })
-      .then(res => {        
-        props.navigation.navigate('LoginPage');
-        return alert('회원탈퇴가 완료되었습니다.');
-      })
-      .catch(err => console.error(err));
-  };
-
-  
-
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
