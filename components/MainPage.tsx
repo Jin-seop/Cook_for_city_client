@@ -27,7 +27,7 @@ export default function MainPage(props:any) {
     if(dataList.length > 0){
       return dataList.map((data:any,key:number) => {
         return (
-          <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage')} key={key} >
+          <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage',{title:data.title})} key={key} >
             <ImageBackground source={{uri:data.recipe_img}} style={style.contentBackgroundImg} >
               <Text style={style.contentText} >{data.title}</Text>
             </ImageBackground>
@@ -45,13 +45,13 @@ export default function MainPage(props:any) {
         });
     }
 
-    return sessonList.map((listItem:string,key:number) => {
+    return sessonList.map((listItem:any,key:number) => {
       return (
-        <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage')} key={key} >
-          <ImageBackground style={style.contentBackgroundImg} >
-            <Text style={style.contentText} >{listItem}</Text>
+        <View style={style.content}  key={key} >
+          <ImageBackground style={style.contentBackgroundImg} source={{uri:listItem.recipe_img}}>
+            <Text style={style.contentText} >요번달 제철재료 : {listItem.title}</Text>
           </ImageBackground>
-        </TouchableOpacity>
+        </View>
       );
     });
   };
@@ -174,7 +174,8 @@ const style = StyleSheet.create({
     marginBottom:15,
     alignItems:'center',
     justifyContent:'center',
-    opacity:0.8},
+    opacity:0.9
+  },
 
   contentText:{
     top:50,
