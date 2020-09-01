@@ -3,7 +3,7 @@ import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity } from 
 import MypageImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 
-export default function Mypage(props) {
+export default function Mypage(props:any) {
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>

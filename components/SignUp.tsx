@@ -4,7 +4,7 @@ import SignupImage from '../assets/SignUp.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
 
-export default function SignUp(props) {
+export default function SignUp(props:any) {
   const [userId,setUserId] = useState<string>('');
   const [password,setPassword] = useState<string>('');
   const [checkPassword,setCheckPassword] = useState<string>('');

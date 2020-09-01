@@ -3,7 +3,7 @@ import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import { TouchableOpacity, TextInput, ScrollView } from 'react-native-gesture-handler';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 
-export default function PostPage () {
+export default function PostPage (props:any) {
   return(
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg} >
       <ScrollView style={style.mainWrapper}>

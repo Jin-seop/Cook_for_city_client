@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text,StyleSheet } from 'react-native';
 import { TouchableOpacity, TextInput } from 'react-native-gesture-handler';
 
-export default function Comment() {
+export default function Comment(props:any) {
   return(
     <View style={style.background}>
       <View style={style.commentWrapper}>

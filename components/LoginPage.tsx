@@ -6,7 +6,7 @@ import loginImage from '../assets/login.png';
 import blackBackgroundImage from '../assets/blackBackground.jpg';
 import { resolvePreset } from '@babel/core';
 
-export default function LoginPage(props:object) {
+export default function LoginPage(props:any) {
   
   const [userId, setUserId] = useState<string>('');
   const [userPassword, setUserPassword] = useState<string>('');
@@ -44,7 +44,7 @@ export default function LoginPage(props:object) {
           <TextInput  
             placeholder='아이디를 입력해주세요' 
             style={styles.Input}
-            onChange={(e:object) => {
+            onChange={(e:any) => {
               e.preventDefault();
               setUserId(e.nativeEvent.text);
             }}
@@ -53,7 +53,7 @@ export default function LoginPage(props:object) {
             placeholder='비밀번호를 입력해주세요'
             secureTextEntry={true}
             style={styles.Input}
-            onChange={(e:object) => {
+            onChange={(e:any) => {
               e.preventDefault();
               setUserPassword(e.nativeEvent.text);
             }}
