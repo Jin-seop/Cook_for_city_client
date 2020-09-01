@@ -132,7 +132,7 @@ const style = StyleSheet.create({
   },
   content:{
     width: 250,
-    height:200,
+    height:250,
     marginRight:10,
     marginBottom:15,
     borderRadius:10,
@@ -145,6 +145,7 @@ const style = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     opacity:0.8},
+
   contentText:{
     top:50,
     fontSize:20,
