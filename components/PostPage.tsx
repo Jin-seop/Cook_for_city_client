@@ -145,7 +145,8 @@ const style = StyleSheet.create({
     top:0,
     left:80,
     backgroundColor:'#F3ECA5',
-    padding:20
+    padding:20,
+    borderRadius:5
   },
   starWrapper:{
     left:200,
@@ -189,10 +190,10 @@ const style = StyleSheet.create({
   },
   recipeTitleWrapper:{
     backgroundColor:'white',
-    width:100,
     alignItems:'center',
     marginBottom:20,
-    borderRadius:5
+    borderRadius:5,
+    marginTop:10
   },
   recipeWrapper:{
     backgroundColor:'white',
