@@ -9,6 +9,7 @@ import MoveDoSiIn from './components/MoveDoSiIn';
 import Comment from './components/Comment';
 import MainPage from './components/MainPage';
 import EditUserInfo from './components/EditUserInfo';
+import CheckDeleteUser from './components/CheckDeleteUser';
 
 const Route = createStackNavigator({
   LoginPage:{
@@ -34,6 +35,9 @@ const Route = createStackNavigator({
   },
   MainPage:{
     screen:MainPage
+  },
+  checkDeleteUser:{
+    screen:CheckDeleteUser
   }
 },{
   defaultNavigationOptions: {
