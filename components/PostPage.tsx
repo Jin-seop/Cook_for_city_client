@@ -5,6 +5,7 @@ import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
 
 export default function PostPage (props:any) {
+
   const postDetail = () => {
     Axios.post('http://52.78.146.191:5000/recipe/recipedetail',{
       title:props.navigation.state.params.title
@@ -13,11 +14,23 @@ export default function PostPage (props:any) {
         console.log(res);
       })
       .catch(err => {
+
+  const logoutHandler = () => {
+    Axios.post('http://52.78.146.191:5000/login/signout')
+      .then(res => {
+        if(res.status === 200){
+          props.navigation.navigate('LoginPage');
+          return alert(res.data);
+        }
+      }).catch(err => {
+
         console.error(err);
       });
   };
 
   useEffect(postDetail,[]);
+
+
   return(
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg} >
       <ScrollView style={style.mainWrapper}>
@@ -25,7 +38,7 @@ export default function PostPage (props:any) {
           <Text style={style.menuText} >메뉴</Text>      
           <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}><Text style={style.menuButtonText}>Do.SI.IN</Text></TouchableOpacity>      
           <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage')}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>      
-          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('LoginPage')}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>      
+          <TouchableOpacity style={style.menuButton} onPress={()=> logoutHandler()}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>      
         </View>
         <View style={style.contentWrapper}>
           <View style={style.starWrapper}>
