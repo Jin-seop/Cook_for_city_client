@@ -14,6 +14,9 @@ export default function PostPage (props:any) {
         console.log(res);
       })
       .catch(err => {
+        console.error(err);
+      });
+  };
 
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
@@ -27,7 +30,6 @@ export default function PostPage (props:any) {
         console.error(err);
       });
   };
-
   useEffect(postDetail,[]);
 
 
@@ -143,7 +145,6 @@ const style = StyleSheet.create({
   starText:{
     fontSize:40
   },
-
   postButton:{
     left:170,
     top:0,

@@ -49,7 +49,7 @@ export default function MainPage(props:any) {
       return (
         <View style={style.content}  key={key} >
           <ImageBackground style={style.contentBackgroundImg} source={{uri:listItem.recipe_img}}>
-            <Text style={style.contentText} >요번달 제철재료 : {listItem.title}</Text>
+            <Text style={style.contentText} >제철재료 : {listItem.title}</Text>
           </ImageBackground>
         </View>
       );
