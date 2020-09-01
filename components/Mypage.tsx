@@ -1,10 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity, Linking } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity, Linking, Alert } from 'react-native';
 import MypageImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
+import { TextInput } from 'react-native-gesture-handler';
 
 export default function Mypage(props:any) {
+
+
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
       .then(res => {
@@ -32,7 +35,7 @@ export default function Mypage(props:any) {
             <Text style={style.sideButtonText} onPress={()=> props.navigation.navigate('MainPage')}>메인페이지</Text>
           </TouchableOpacity> 
           <TouchableOpacity style={style.sideButton} onPress={()=> logoutHandler()}>
-            <Text style={style.sideButtonText} >로그아웃</Text>
+            <Text style={style.sideButtonText}>로그아웃</Text>
           </TouchableOpacity> 
         </View>
         <View style={style.mainLogoWrapper}>
@@ -48,7 +51,9 @@ export default function Mypage(props:any) {
           <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('EditUserInfo')}><Text>내 정보 수정하기</Text></TouchableOpacity> 
         </View>
         <View style={style.buttonWrapper}>
-          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('LoginPage')}><Text>회원 탈퇴</Text></TouchableOpacity> 
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('checkDeleteUser')}>
+            <Text>회원 탈퇴</Text>
+          </TouchableOpacity> 
         </View>
       </View>
     </ImageBackground>
