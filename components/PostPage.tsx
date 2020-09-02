@@ -11,6 +11,7 @@ export default function PostPage (props:any) {
   const [recipe,setRecipe] = useState<string>('');
   const [comments,setComments] = useState([] as any);
   const [favorit,setFavorit] = useState<boolean>(Boolean||null);
+  const [recipeId,setRecipeId] = useState<string>('');
 
   const postDetail = () => {
     Axios.post('http://13.125.205.76:50000/recipe/recipedetail',{
@@ -24,10 +25,10 @@ export default function PostPage (props:any) {
         setTitle(data.title);
         setRecipe(data.recipe.trim());
         setComments(data.comments);
-        if(data.users.length === 0){
+        if(data.Users.length === 0){
           setFavorit(false);
         }
-        if(data.users.length === 1){
+        if(data.Users.length === 1){
           setFavorit(true);
         }
       })
@@ -38,7 +39,7 @@ export default function PostPage (props:any) {
   const favoritHandler =()=>{
     if(favorit === false){
       Axios.post('http://13.125.205.76:50000/recipe/recipefavorites',{
-        id:props.navigation.state.params.id
+        id:recipeId
       }).then(res => {
         if(res.status === 201){
           alert('즐겨찾기 등록완료');
@@ -49,7 +50,7 @@ export default function PostPage (props:any) {
     }
     if(favorit === true){
       Axios.put('http://13.125.205.76:50000/recipe/recipefavoritesdelete',{
-        id:props.navigation.state.params.id
+        id:recipeId
       })
         .then(res => {
           if(res.status === 200){
@@ -89,7 +90,9 @@ export default function PostPage (props:any) {
       });
   };
   useEffect(postDetail,[]);
-
+  useEffect(()=> {
+    setRecipeId(props.navigation.state.params.id);
+  },[]);
   return(
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg} >
       <ScrollView style={style.mainWrapper}>
