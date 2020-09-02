@@ -18,7 +18,6 @@ export default function Mypage(props:any) {
         console.error(err);
       });
   };
-
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
@@ -47,7 +46,7 @@ export default function Mypage(props:any) {
           <Text style={style.aligntext}>내가 준 별점</Text>
         </View> 
         <View style={style.editButtonWrapper}>
-          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('EditUserInfo')}><Text>내 정보 수정하기</Text></TouchableOpacity> 
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('EditUserInfo',{userid:props.navigation.state.params.userid})}><Text>내 정보 수정하기</Text></TouchableOpacity> 
         </View>
         <View style={style.buttonWrapper}>
           <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('checkDeleteUser')}>

@@ -54,7 +54,6 @@ export default function PostPage (props:any) {
         .catch(err => console.error(err));
     }
   };
-
   const commentsHandler:any = () => {
     if(comments.length > 0){
       // return comments.map((el,key) => {
@@ -83,7 +82,6 @@ export default function PostPage (props:any) {
         console.error(err);
       });
   };
-
   useEffect(postDetail,[]);
 
   return(
@@ -92,7 +90,7 @@ export default function PostPage (props:any) {
         <View style={style.menuWrapper}>
           <Text style={style.menuText} >메뉴</Text>      
           <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}><Text style={style.menuButtonText}>Do.SI.IN</Text></TouchableOpacity>      
-          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage')}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>      
+          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage',{userid:props.navigation.state.params.userid})}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>      
           <TouchableOpacity style={style.menuButton} onPress={()=> logoutHandler()}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>      
         </View>
         <View style={style.contentWrapper}>

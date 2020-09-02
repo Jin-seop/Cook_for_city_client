@@ -16,6 +16,10 @@ export default function SignUp(props:any) {
       return alert('아이디를 입력해주세요');
     }
 
+    if (userId.length <= 4) {
+      return alert('아이디를 5자 이상으로 해주세요');
+    }
+  
     Axios.post('http://52.78.146.191:5000/signup/checkid',{
       userid:userId
     }).then(res => {

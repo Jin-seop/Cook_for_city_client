@@ -68,10 +68,10 @@ export default function MainPage(props:any) {
         console.error(err);
       });
   };
-
+  
   useEffect(()=> {
     if(props.navigation.state.params)
-    {setUserid(props.navigation.state.params.userId);}
+    {setUserid(props.navigation.state.params.userid);}
   },[]);
 
   return(
@@ -79,7 +79,7 @@ export default function MainPage(props:any) {
       <View style={style.menuWrapper}>
         <Text style={style.menuText}>메뉴</Text>
         <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}><Text style={style.menuButtonText}>DO.SI.IN</Text></TouchableOpacity>
-        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage')}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage',{userid})}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
         <TouchableOpacity style={style.menuButton} onPress={()=> logoutHandler()}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
       </View>
       <View style={style.serchbar} >
