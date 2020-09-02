@@ -10,7 +10,7 @@ export default function PostPage (props:any) {
   const [title,setTitle] = useState<string>(''); 
   const [recipe,setRecipe] = useState<string>('');
   const [comments,setComments] = useState([] as any);
-  const [favorit,setFavorit] = useState<boolean>(false);
+  const [favorit,setFavorit] = useState<boolean>(Boolean||null);
 
   const postDetail = () => {
     Axios.post('http://52.78.146.191:5000/recipe/recipedetail',{
@@ -24,6 +24,12 @@ export default function PostPage (props:any) {
         setTitle(data.title);
         setRecipe(data.recipe.trim());
         setComments(data.comments);
+        if(data.users.length === 0){
+          setFavorit(false);
+        }
+        if(data.users.length === 1){
+          setFavorit(true);
+        }
       })
       .catch(err => {
         console.error(err);

@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View ,Image, ImageBackground,TouchableOpacity, Linking, Alert } from 'react-native';
 import MypageImage from '../assets/Mypage.png';
 import WhiteBackgroundImage from '../assets/city_white.jpg';
 import Axios from 'axios';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Mypage(props:any) {
-
+  const [postList,setPostList] = useState([] as any);
+  const [comments,setComments] = useState([] as any);
   
+  const postInfoHandler = () => {
+    Axios.get('http://52.78.146.191:5000/mypage/mypageGet')
+      .then(res => {
+        setPostList(res.data[0].Recipe); 
+      })
+      .catch(err => console.error(err));
+  };
+
+  const postHandler = () => {
+    if(postList){
+      return postList.map((data:any,key:number) => {
+        return(
+          <TouchableOpacity key={key} style={style.favoriteListWrapper} onPress={() => props.navigation.navigate('PostPage',{title:data.title})}>
+            <Text>-{data.title}</Text>
+          </TouchableOpacity>
+        );
+      });
+    }
+  };
+
   const logoutHandler = () => {
     Axios.post('http://52.78.146.191:5000/login/signout')
       .then(res => {
@@ -18,6 +40,8 @@ export default function Mypage(props:any) {
         console.error(err);
       });
   };
+
+  useEffect(()=> postInfoHandler(),[]);
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
@@ -41,9 +65,12 @@ export default function Mypage(props:any) {
         </View>
         <View style={style.myfavoritesBox}>
           <Text style={style.aligntext}>내 즐겨찾기</Text>
+          <ScrollView>
+            {postHandler()}
+          </ScrollView>
         </View>
         <View style={style.mystarBox}>
-          <Text style={style.aligntext}>내가 준 별점</Text>
+          <Text style={style.aligntext}>내가 쓴 댓글</Text>
         </View> 
         <View style={style.editButtonWrapper}>
           <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('EditUserInfo',{userid:props.navigation.state.params.userid})}><Text>내 정보 수정하기</Text></TouchableOpacity> 
@@ -132,5 +159,9 @@ const style = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     marginBottom:10
+  },
+  favoriteListWrapper:{
+    width:'100%',
+    margin:10,
   }
 });
