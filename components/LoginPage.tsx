@@ -31,7 +31,7 @@ export default function LoginPage(props:any) {
         }
       })
       .catch(err => {
-        alert('유저 정보가 없습니다.');
+        alert('유저 정보가 잘못 되었습니다.');
       });
   }; 
   return (
