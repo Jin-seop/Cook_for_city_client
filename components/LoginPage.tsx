@@ -4,7 +4,6 @@ import { TextInput } from 'react-native-gesture-handler';
 import axios from 'axios';
 import loginImage from '../assets/login.png';
 import blackBackgroundImage from '../assets/blackBackground.jpg';
-import { resolvePreset } from '@babel/core';
 
 export default function LoginPage(props:any) {
   
