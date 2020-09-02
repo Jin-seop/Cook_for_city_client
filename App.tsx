@@ -42,7 +42,7 @@ const Route = createStackNavigator({
 },{
   defaultNavigationOptions: {
     headerShown: false,
-    title: null,
+    title: undefined,
   },
 });
 
