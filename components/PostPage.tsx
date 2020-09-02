@@ -78,7 +78,7 @@ export default function PostPage (props:any) {
   };
   
   const logoutHandler = () => {
-    Axios.post('http://52.78.146.191:5000/login/signout')
+    Axios.post('http://13.125.205.76:50000/login/signout')
       .then(res => {
         if(res.status === 200){
           props.navigation.navigate('LoginPage');
