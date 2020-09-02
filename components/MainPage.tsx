@@ -15,15 +15,15 @@ export default function MainPage(props:any) {
   const serchListHandler:any = () => {
     if(preSerch !== serch){
       setPreSerch(serch);
-      Axios.post('http://52.78.146.191:5000/recipe/recipesearch',{
+      Axios.post('http://13.125.205.76:50000/recipe/recipesearch',{
         meterial:serch
       }).then(res => {
+        console.log(res);
         setDataList(res.data);
       })
         .catch(err => {
           console.error(err);
         });
-      
     }
     if(dataList.length > 0){
       return dataList.map((data:any,key:number) => {
@@ -40,7 +40,7 @@ export default function MainPage(props:any) {
 
   const seasonListHandler = () => {
     if(sessonList.length === 0 || sessonList !== sessonList){
-      Axios.get('http://52.78.146.191:5000/recipe/materials')
+      Axios.get('http://13.125.205.76:50000/recipe/materials')
         .then(res => {
           setSessonList(res.data);
         });

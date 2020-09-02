@@ -20,7 +20,7 @@ export default function SignUp(props:any) {
       return alert('아이디를 5자 이상으로 해주세요');
     }
   
-    Axios.post('http://52.78.146.191:5000/signup/checkid',{
+    Axios.post('http://13.125.205.76:50000/signup/checkid',{
       userid:userId
     }).then(res => {
       if(res.status === 200){
@@ -53,7 +53,7 @@ export default function SignUp(props:any) {
       return alert('이메일이 잘 못 되었습니다');
     }
 
-    Axios.post('http://52.78.146.191:5000/signup/signup',{
+    Axios.post('http://13.125.205.76:50000/signup/signup',{
       userid:userId,
       password,
       email

@@ -10,7 +10,7 @@ export default function Mypage(props:any) {
   const [comments,setComments] = useState([] as any);
   
   const postInfoHandler = () => {
-    Axios.get('http://52.78.146.191:5000/mypage/mypageGet')
+    Axios.get('http://13.125.205.76:50000/mypage/mypageGet')
       .then(res => {
         setPostList(res.data[0].Recipe); 
       })
@@ -30,7 +30,7 @@ export default function Mypage(props:any) {
   };
 
   const logoutHandler = () => {
-    Axios.post('http://52.78.146.191:5000/login/signout')
+    Axios.post('http://13.125.205.76:50000/login/signout')
       .then(res => {
         if(res.status === 200){
           props.navigation.navigate('LoginPage');
