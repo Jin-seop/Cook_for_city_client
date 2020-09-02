@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ImageBackground,StyleSheet } from 'react-native';
 import { TouchableOpacity, TextInput, ScrollView } from 'react-native-gesture-handler';
 import cityWhite from '../assets/city_white.jpg';
+import emptyBackgroundImg from '../assets/login.png';
 import Axios from 'axios';
 
 
@@ -18,7 +19,6 @@ export default function MainPage(props:any) {
       Axios.post('http://13.125.205.76:50000/recipe/recipesearch',{
         meterial:serch
       }).then(res => {
-        console.log(res);
         setDataList(res.data);
       })
         .catch(err => {
@@ -29,8 +29,10 @@ export default function MainPage(props:any) {
       return dataList.map((data:any,key:number) => {
         return (
           <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage',{title:data.title,id:data.id,userid})} key={key} >
-            <ImageBackground source={{uri:data.recipe_img}} style={style.contentBackgroundImg} >
-              <Text style={style.contentText} >{data.title}</Text>
+            <ImageBackground source={emptyBackgroundImg} style={style.contentBackgroundImg}>
+              <ImageBackground source={{uri:data.recipe_img}} style={style.contentBackgroundImg} >
+                <Text style={style.contentText} >{data.title}</Text>
+              </ImageBackground>
             </ImageBackground>
           </TouchableOpacity>
         );
