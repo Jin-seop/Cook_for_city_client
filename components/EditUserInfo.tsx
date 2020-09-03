@@ -6,7 +6,7 @@ import Axios from 'axios';
 
 export default function EditUserInfo(props:any) {
 
-  const [userid,setUserid] = useState<string>('');
+  const [userId,setUserId] = useState<string>('');
   const [password,setPassword] = useState<string>('');
   const [checkPassword,setCheckPassword] = useState<string>('');
   const [email,setEmail] = useState<string>('');
@@ -33,7 +33,7 @@ export default function EditUserInfo(props:any) {
     if(password === checkPassword){
       Axios.put('13.125.205.76:50000/mypage/setupPut',{
         email,
-        userid,
+        userId,
         password
       })
         .then(res => {
@@ -49,7 +49,7 @@ export default function EditUserInfo(props:any) {
     }
   };
 
-  useEffect(()=> {setUserid(props.navigation.state.params.userid);},[]);
+  useEffect(()=> {setUserId(props.navigation.state.params.userid);},[]);
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
