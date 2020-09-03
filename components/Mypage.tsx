@@ -42,6 +42,7 @@ export default function Mypage(props:any) {
   };
 
   useEffect(()=> postInfoHandler(),[]);
+  
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>

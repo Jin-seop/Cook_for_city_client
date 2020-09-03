@@ -1,38 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text,StyleSheet } from 'react-native';
 import { TouchableOpacity, TextInput } from 'react-native-gesture-handler';
+import Axios from 'axios';
 
 export default function Comment(props:any) {
+
+  const [title,setTitle] = useState<string>('');
+  const [comment,setComment] = useState<string>('');
+  const [starpoint,setStarpoint] = useState<number>(1);
+
+  const commentSendServerHandler = () => {
+    Axios.post('http://13.125.205.76:50000/recipe/recipecomment',{
+      title,
+      comment,
+      starpoint
+    })
+      .then(res => {
+        if(res.status === 201 ){
+          props.navigation.navigate('PostPage');
+          alert('댓글 등록 완료');
+        }
+      })
+      .catch(err => console.error(err));
+  };
+
+  useEffect(()=> setTitle(props.navigation.state.params.title),[]);
+
   return(
     <View style={style.background}>
       <View style={style.commentWrapper}>
         <View style={style.starRatingTitle}>
           <Text style={style.starRatinTitleText}>별점</Text>
           <View style={style.starbuttonWrapper}>
-            <TouchableOpacity>
-              <Text style={style.starButtonText}>★</Text>
+            <TouchableOpacity onPress={()=> setStarpoint(1)} >
+              {starpoint >= 1 ? <Text style={style.starButtonText}>★</Text> :<Text style={style.starButtonText}>☆</Text> }
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={style.starButtonText}>★</Text>
+            <TouchableOpacity onPress={()=> setStarpoint(2)} >
+              {starpoint >= 2 ? <Text style={style.starButtonText}>★</Text> :<Text style={style.starButtonText}>☆</Text> }
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={style.starButtonText}>★</Text>
+            <TouchableOpacity onPress={()=> setStarpoint(3)} >
+              {starpoint >= 3 ? <Text style={style.starButtonText}>★</Text> :<Text style={style.starButtonText}>☆</Text> }
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={style.starButtonText}>★</Text>
+            <TouchableOpacity onPress={()=> setStarpoint(4)} >
+              {starpoint >= 4 ? <Text style={style.starButtonText}>★</Text> :<Text style={style.starButtonText}>☆</Text> }
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={style.starButtonText}>★</Text>
-            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> setStarpoint(5)} >
+              {starpoint >= 5 ? <Text style={style.starButtonText}>★</Text> :<Text style={style.starButtonText}>☆</Text> }
+            </TouchableOpacity>           
           </View>
           <View style={style.commentInput}>
-            <TextInput placeholder='댓글' />
+            <TextInput placeholder='댓글' onChange={e => {e.preventDefault(); setComment(e.nativeEvent.text);}} />
           </View>
           <View style={style.buttonWrapper}>
-            <TouchableOpacity style={style.button} onPress={()=> props.navigation.goback()}>
+            <TouchableOpacity style={style.button} onPress={()=> commentSendServerHandler()}>
               <Text>등록</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={style.button} onPress={()=> props.navigation.goback()}>
+            <TouchableOpacity style={style.button} onPress={()=> props.navigation.goBack()}>
               <Text>취소</Text>
             </TouchableOpacity>
           </View>
@@ -62,7 +85,7 @@ const style = StyleSheet.create({
   starRatinTitleText:{
     fontSize:25,
     left:-15,
-    top:10
+    top:23
   },
   starbuttonWrapper:{
     flexDirection:'row',
