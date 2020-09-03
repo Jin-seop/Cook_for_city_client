@@ -8,23 +8,48 @@ export default function Comment(props:any) {
   const [title,setTitle] = useState<string>('');
   const [comment,setComment] = useState<string>('');
   const [starpoint,setStarpoint] = useState<number>(1);
+  const [userId,setUserId] = useState<string>('');
+  const [id,setId] = useState<number>(0);
 
   const commentSendServerHandler = () => {
-    Axios.post('http://13.125.205.76:50000/recipe/recipecomment',{
-      title,
-      comment,
-      starpoint
-    })
-      .then(res => {
-        if(res.status === 201 ){
-          props.navigation.navigate('PostPage');
-          alert('댓글 등록 완료');
-        }
+    if(userId){
+      Axios.put('http://13.125.205.76:50000/recipe/recipecommentupdate',{
+        id,
+        userId,
+        comment,
+        starpoint
       })
-      .catch(err => console.error(err));
+        .then(res => {
+          if(res.status === 200){
+            props.navigation.navigate('PostPage');
+            alert('댓글 수정 완료');
+          }
+        });
+    }else{
+      Axios.post('http://13.125.205.76:50000/recipe/recipecomment',{
+        title,
+        comment,
+        starpoint
+      })
+        .then(res => {
+          if(res.status === 201 ){
+            props.navigation.navigate('PostPage');
+            alert('댓글 등록 완료');
+          }
+        })
+        .catch(err => console.error(err));
+    }
   };
 
-  useEffect(()=> setTitle(props.navigation.state.params.title),[]);
+  useEffect(()=> {
+    setTitle(props.navigation.state.params.title);
+    if(props.navigation.state.params.userId){
+      setUserId(props.navigation.state.params.userId);
+      setComment(props.navigation.state.params.comment);
+      setStarpoint(props.navigation.state.params.starpoint);
+      setId(props.navigation.state.params.id);
+    }
+  },[]);
 
   return(
     <View style={style.background}>
@@ -49,11 +74,11 @@ export default function Comment(props:any) {
             </TouchableOpacity>           
           </View>
           <View style={style.commentInput}>
-            <TextInput placeholder='댓글' onChange={e => {e.preventDefault(); setComment(e.nativeEvent.text);}} />
+            <TextInput placeholder='댓글' onChange={e => {e.preventDefault(); setComment(e.nativeEvent.text);}} ><Text>{comment}</Text></TextInput>
           </View>
           <View style={style.buttonWrapper}>
             <TouchableOpacity style={style.button} onPress={()=> commentSendServerHandler()}>
-              <Text>등록</Text>
+              {userId ? <Text>수정</Text> : <Text>등록</Text>}
             </TouchableOpacity>
             <TouchableOpacity style={style.button} onPress={()=> props.navigation.goBack()}>
               <Text>취소</Text>

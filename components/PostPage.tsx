@@ -79,7 +79,7 @@ export default function PostPage (props:any) {
                 <Text>삭제</Text>
               </TouchableOpacity> : <Text></Text>}
             {userid === data.cookcomment.userId ? 
-              <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate('Comment')}>
+              <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate('Comment',{userId:data.cookcomment.userId,comment:data.comment,starpoint:data.starpoint,id:data.id})}>
                 <Text>수정</Text>
               </TouchableOpacity> : <Text></Text>}
           </View>
