@@ -22,7 +22,7 @@ export default function Mypage(props:any) {
     if(postList){
       return postList.map((data:any,key:number) => {
         return(
-          <TouchableOpacity key={key} style={style.favoriteListWrapper} onPress={() => props.navigation.navigate('PostPage',{title:data.title})}>
+          <TouchableOpacity key={key} style={style.favoriteListWrapper} onPress={() => props.navigation.navigate('PostPage',{title:data.title,userid:props.navigation.state.params.userid})}>
             <Text>- {data.title}</Text>
           </TouchableOpacity>
         );
@@ -34,7 +34,7 @@ export default function Mypage(props:any) {
     if(comments){
       return comments.map((data:any,key:number) =>{
         return(
-          <TouchableOpacity key={key} style={style.favoriteListWrapper} onPress={() => props.navigation.navigate('PostPage',{title:data.cookcommentrecipe.title})}>
+          <TouchableOpacity key={key} style={style.favoriteListWrapper} onPress={() => props.navigation.navigate('PostPage',{title:data.cookcommentrecipe.title,userid:props.navigation.state.params.userid})}>
             <Text>- {data.comment}</Text>
           </TouchableOpacity>
         );

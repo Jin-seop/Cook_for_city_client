@@ -75,7 +75,7 @@ export default function PostPage (props:any) {
             {userid === 'admin' ? 
               <TouchableOpacity
                 style={style.commentButton} 
-                onPress={()=> {adminCommentDeleteHandler();}}>
+                onPress={()=> {adminCommentDeleteHandler(data.id);}}>
                 <Text>삭제</Text>
               </TouchableOpacity> : <Text></Text>}
             {userid === data.cookcomment.userId ? 
