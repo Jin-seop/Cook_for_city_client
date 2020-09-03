@@ -72,8 +72,8 @@ export default function MainPage(props:any) {
   };
   
   useEffect(()=> {
-    if(props.navigation.state.params)
-    {setUserId(props.navigation.state.params.userid);}
+    if(props.navigation.state.params){
+      setUserId(props.navigation.state.params.userid);}
   },[]);
 
   return(
