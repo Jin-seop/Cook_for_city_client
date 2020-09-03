@@ -12,7 +12,8 @@ export default function Mypage(props:any) {
   const postInfoHandler = () => {
     Axios.get('http://13.125.205.76:50000/mypage/mypageGet')
       .then(res => {
-        setPostList(res.data[0].Recipe); 
+        setPostList(res.data[0].Recipe);
+        setComments(res.data[0].cookcomment); 
       })
       .catch(err => console.error(err));
   };
@@ -22,7 +23,19 @@ export default function Mypage(props:any) {
       return postList.map((data:any,key:number) => {
         return(
           <TouchableOpacity key={key} style={style.favoriteListWrapper} onPress={() => props.navigation.navigate('PostPage',{title:data.title})}>
-            <Text>-{data.title}</Text>
+            <Text>- {data.title}</Text>
+          </TouchableOpacity>
+        );
+      });
+    }
+  };
+
+  const commentHandler = () => {
+    if(comments){
+      return comments.map((data:any,key:number) =>{
+        return(
+          <TouchableOpacity key={key} style={style.favoriteListWrapper} onPress={() => props.navigation.navigate('PostPage',{title:data.cookcommentrecipe.title})}>
+            <Text>- {data.comment}</Text>
           </TouchableOpacity>
         );
       });
@@ -72,9 +85,14 @@ export default function Mypage(props:any) {
         </View>
         <View style={style.mystarBox}>
           <Text style={style.aligntext}>내가 쓴 댓글</Text>
+          <ScrollView>
+            {commentHandler()}
+          </ScrollView>
         </View> 
         <View style={style.editButtonWrapper}>
-          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('EditUserInfo',{userid:props.navigation.state.params.userid})}><Text>내 정보 수정하기</Text></TouchableOpacity> 
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('EditUserInfo',{userid:props.navigation.state.params.userid})}>
+            <Text>내 정보 수정하기</Text>
+          </TouchableOpacity> 
         </View>
         <View style={style.buttonWrapper}>
           <TouchableOpacity style={style.button} onPress={()=> props.navigation.navigate('checkDeleteUser')}>
@@ -127,7 +145,7 @@ const style = StyleSheet.create({
   },
   myfavoritesBox: {
     width: 219,
-    height: 178,
+    height: 150,
     backgroundColor: '#F3ECA5',
     position: 'absolute',
     top: 170,
@@ -135,10 +153,10 @@ const style = StyleSheet.create({
   },
   mystarBox: {
     width: 219,
-    height: 109,
+    height: 150,
     backgroundColor: '#F3ECA5',
     position: 'absolute',
-    top: 390,
+    top: 350,
     borderRadius: 5,
   },
   editButtonWrapper:{
@@ -149,7 +167,7 @@ const style = StyleSheet.create({
   buttonWrapper:{
     position:'absolute',
     width:200,
-    top:600,
+    top:580,
   },
   button:{
     width:"100%",
