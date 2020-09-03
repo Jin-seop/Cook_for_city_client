@@ -14,7 +14,7 @@ export default function LoginPage(props:any) {
       .post(
         'http://13.125.205.76:50000/login/signin',
         {
-          userid : userId,
+          userId,
           password: userPassword,
         },
         {

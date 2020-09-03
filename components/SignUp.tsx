@@ -21,7 +21,7 @@ export default function SignUp(props:any) {
     }
   
     Axios.post('http://13.125.205.76:50000/signup/checkid',{
-      userid:userId
+      userId
     }).then(res => {
       if(res.status === 200){
         return alert('사용가능한 아이디입니다.');
@@ -54,7 +54,7 @@ export default function SignUp(props:any) {
     }
 
     Axios.post('http://13.125.205.76:50000/signup/signup',{
-      userid:userId,
+      userId,
       password,
       email
     })
