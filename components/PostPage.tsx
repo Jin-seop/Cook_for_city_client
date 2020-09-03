@@ -9,7 +9,7 @@ export default function PostPage (props:any) {
   const [meterial,setMeterial] = useState<string>('');
   const [title,setTitle] = useState<string>(''); 
   const [recipe,setRecipe] = useState<string>('');
-  const [comments,setComments] = useState([] as any);
+  const [comments,setComments] = useState([{userid:"jin",starpoint:5,comment:'oh!'}]);
   const [favorit,setFavorit] = useState<boolean>(Boolean||null);
   const [recipeId,setRecipeId] = useState<string>('');
 
@@ -24,7 +24,7 @@ export default function PostPage (props:any) {
         setMeterial(data.meterial.replace(/(\s*)/g, ""));
         setTitle(data.title);
         setRecipe(data.recipe.trim());
-        setComments(data.comments);
+        // setComments(data.comments);
         if(data.Users.length === 0){
           setFavorit(false);
         }
@@ -62,20 +62,33 @@ export default function PostPage (props:any) {
     }
   };
   const commentsHandler:any = () => {
-    if(comments.length > 0){
-      // return comments.map((el,key) => {
-      // return (
-      // <View style={style.comment} key={key}>
-      //   <Text>별점:</Text>
-      //   <Text>-작성자</Text>
-      //   <Text>-댓글</Text>
-      //   <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate(Comment)}>
-      //     <Text>수정</Text>
-      //   </TouchableOpacity>
-      // </View>
-      // );
-      // });
-    }
+    // if(comments.length > 0){
+    //   return comments.map((data:any,key:number) => {
+    //     console.log(data);
+    //     return (
+    //       <View style={style.comment} key={key}>
+    //         <Text>별점: {data.starpoint}</Text>
+    //         <Text>-작성자: {data.userid}</Text>
+    //         <Text>-댓글: {data.comment}</Text>
+    //         <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate(Comment)}>
+    //           <Text>수정</Text>
+    //         </TouchableOpacity>
+    //       </View>
+    //     );
+    //   });
+    // }
+  };
+
+  const adminCommentDeleteHandler = (id:string) => {
+    Axios.put('http://13.125.205.76:50000/recipe/admincommentdelete',{
+      id:id
+    }).then(res => {
+      if(res.status === 200){
+        postDetail();
+        alert('댓글 삭제 완료');
+      }
+    })
+      .catch(err => console.error(err));
   };
   
   const logoutHandler = () => {
@@ -124,7 +137,20 @@ export default function PostPage (props:any) {
           </TouchableOpacity>
         </View>
         <View style={style.commentWrapper}>
-          {commentsHandler()}
+          {/* {commentsHandler()} */}
+          <View style={style.comment} >
+            <Text>별점: {comments[0].starpoint}</Text>
+            <Text>-작성자: {comments[0].userid}</Text>
+            <Text>-댓글: {comments[0].comment}</Text>
+            {props.navigation.state.params.userid === 'admin' ? 
+              <TouchableOpacity
+                style={style.commentButton} 
+                onPress={()=> {
+                  adminCommentDeleteHandler(comments[0].userid);}}><Text>삭제</Text></TouchableOpacity> : <Text>.</Text>}
+            <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate(Comment)}>
+              <Text>수정</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </ImageBackground>
@@ -215,7 +241,8 @@ const style = StyleSheet.create({
     left:190,
     width:30,
     borderRadius:5,
-    borderWidth:1
+    borderWidth:1,
+    margin:1
   },
   recipeTitleWrapper:{
     backgroundColor:'white',
