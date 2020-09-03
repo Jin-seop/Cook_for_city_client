@@ -11,7 +11,7 @@ export default function MainPage(props:any) {
   const [dataList,setDataList] = useState([] as any);
   const [preSerch,setPreSerch] = useState<string>("");
   const [sessonList,setSessonList] = useState([] as any);
-  const [userid,setUserid] = useState<string>("");
+  const [userId,setUserId] = useState<string>("");
 
   const serchListHandler:any = () => {
     if(preSerch !== serch){
@@ -28,7 +28,7 @@ export default function MainPage(props:any) {
     if(dataList.length > 0){
       return dataList.map((data:any,key:number) => {
         return (
-          <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage',{title:data.title,id:data.id,userid})} key={key} >
+          <TouchableOpacity style={style.content} onPress={()=> props.navigation.navigate('PostPage',{title:data.title,id:data.id,userid:userId})} key={key} >
             <ImageBackground source={emptyBackgroundImg} style={style.contentBackgroundImg}>
               <ImageBackground source={{uri:data.recipe_img}} style={style.contentBackgroundImg} >
                 <Text style={style.contentText} >{data.title}</Text>
@@ -73,7 +73,7 @@ export default function MainPage(props:any) {
   
   useEffect(()=> {
     if(props.navigation.state.params)
-    {setUserid(props.navigation.state.params.userid);}
+    {setUserId(props.navigation.state.params.userid);}
   },[]);
 
   return(
@@ -81,7 +81,7 @@ export default function MainPage(props:any) {
       <View style={style.menuWrapper}>
         <Text style={style.menuText}>메뉴</Text>
         <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}><Text style={style.menuButtonText}>DO.SI.IN</Text></TouchableOpacity>
-        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage',{userid})}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
+        <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage',{userid:userId})}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>
         <TouchableOpacity style={style.menuButton} onPress={()=> logoutHandler()}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>
       </View>
       <View style={style.serchbar} >
