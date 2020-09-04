@@ -50,6 +50,7 @@ export default function EditUserInfo(props:any) {
   };
 
   useEffect(()=> {setUserId(props.navigation.state.params.userid);},[]);
+
   return (
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg}>
       <View style={style.align}>
@@ -89,8 +90,12 @@ export default function EditUserInfo(props:any) {
           />
         </View>
         <View style={style.buttonWrapper}>
-          <TouchableOpacity style={style.button} onPress={()=> changeHandler()}><Text>수정하기</Text></TouchableOpacity>
-          <TouchableOpacity style={style.button}onPress={()=> props.navigation.goBack()} ><Text>뒤로가기</Text></TouchableOpacity>
+          <TouchableOpacity style={style.button} onPress={()=> changeHandler()}>
+            <Text>수정하기</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.button} onPress={()=> props.navigation.goBack()} >
+            <Text>뒤로가기</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ImageBackground>

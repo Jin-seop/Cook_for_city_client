@@ -55,6 +55,7 @@ export default function Comment(props:any) {
     <View style={style.background}>
       <View style={style.commentWrapper}>
         <View style={style.starRatingTitle}>
+
           <Text style={style.starRatinTitleText}>별점</Text>
           <View style={style.starbuttonWrapper}>
             <TouchableOpacity onPress={()=> setStarpoint(1)} >
@@ -73,16 +74,20 @@ export default function Comment(props:any) {
               {starpoint >= 5 ? <Text style={style.starButtonText}>★</Text> :<Text style={style.starButtonText}>☆</Text> }
             </TouchableOpacity>           
           </View>
+
           <View style={style.commentInput}>
             <TextInput placeholder='댓글' onChange={e => {e.preventDefault(); setComment(e.nativeEvent.text);}} ><Text>{comment}</Text></TextInput>
           </View>
+
           <View style={style.buttonWrapper}>
             <TouchableOpacity style={style.button} onPress={()=> commentSendServerHandler()}>
               {userId ? <Text>수정</Text> : <Text>등록</Text>}
             </TouchableOpacity>
+
             <TouchableOpacity style={style.button} onPress={()=> props.navigation.goBack()}>
               <Text>취소</Text>
             </TouchableOpacity>
+            
           </View>
         </View>
       </View>
