@@ -10,6 +10,7 @@ export default function LoginPage(props:any) {
   const [userId, setUserId] = useState<string>('');
   const [userPassword, setUserPassword] = useState<string>('');
   const userInfoHandler = () => {
+    
     axios
       .post(
         'http://13.125.205.76:8080/login/signin',
@@ -19,7 +20,7 @@ export default function LoginPage(props:any) {
         },
       )
       .then(res => {
-        if (res.status === 201) {
+        if (res.status === 200) {
           props.navigation.navigate('MainPage',{userid:userId});
         }
       })

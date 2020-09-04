@@ -91,7 +91,7 @@ export default function PostPage (props:any) {
   };
 
   const adminCommentDeleteHandler = (id:string) => {
-    Axios.put('http://13.125.205.76:50000/recipe/admincommentdelete',{
+    Axios.put('http://13.125.205.76:8080/recipe/admincommentdelete',{
       id:id
     }).then(res => {
       if(res.status === 200){
@@ -103,7 +103,7 @@ export default function PostPage (props:any) {
   };
   
   const logoutHandler = () => {
-    Axios.post('http://13.125.205.76:50000/login/signout')
+    Axios.post('http://13.125.205.76:8080/login/signout')
       .then(res => {
         if(res.status === 200){
           props.navigation.navigate('LoginPage');
