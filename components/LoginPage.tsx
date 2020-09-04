@@ -17,12 +17,6 @@ export default function LoginPage(props:any) {
           userId,
           password: userPassword,
         },
-        {
-          headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            'Access-Control-Allow-Origin': '*',
-          },
-        }
       )
       .then(res => {
         if (res.status === 201) {

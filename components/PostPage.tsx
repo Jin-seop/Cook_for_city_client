@@ -79,7 +79,9 @@ export default function PostPage (props:any) {
                 <Text>삭제</Text>
               </TouchableOpacity> : <Text></Text>}
             {userid === data.cookcomment.userId ? 
-              <TouchableOpacity style={style.commentButton} onPress={()=> props.navigation.navigate('Comment',{userId:data.cookcomment.userId,comment:data.comment,starpoint:data.starpoint,id:data.id})}>
+              <TouchableOpacity 
+                style={style.commentButton} 
+                onPress={()=> props.navigation.navigate('Comment',{userId:data.cookcomment.userId,comment:data.comment,starpoint:data.starpoint,id:data.id})}>
                 <Text>수정</Text>
               </TouchableOpacity> : <Text></Text>}
           </View>
@@ -127,9 +129,21 @@ export default function PostPage (props:any) {
 
         <View style={style.menuWrapper}>
           <Text style={style.menuText} >메뉴</Text>      
-          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('MoveDoSiIn')}><Text style={style.menuButtonText}>Do.SI.IN</Text></TouchableOpacity>      
-          <TouchableOpacity style={style.menuButton} onPress={()=> props.navigation.navigate('Mypage',{userid:props.navigation.state.params.userid})}><Text style={style.menuButtonText}>마이페이지</Text></TouchableOpacity>      
-          <TouchableOpacity style={style.menuButton} onPress={()=> logoutHandler()}><Text style={style.menuButtonText}>로그아웃</Text></TouchableOpacity>      
+          <TouchableOpacity 
+            style={style.menuButton} 
+            onPress={()=> props.navigation.navigate('MoveDoSiIn')}>
+            <Text style={style.menuButtonText}>Do.SI.IN</Text>
+          </TouchableOpacity>      
+          <TouchableOpacity 
+            style={style.menuButton} 
+            onPress={()=> props.navigation.navigate('Mypage',{userid:props.navigation.state.params.userid})}>
+            <Text style={style.menuButtonText}>마이페이지</Text>
+          </TouchableOpacity>      
+          <TouchableOpacity 
+            style={style.menuButton} 
+            onPress={()=> logoutHandler()}>
+            <Text style={style.menuButtonText}>로그아웃</Text>
+          </TouchableOpacity>      
         </View>
 
         <View style={style.contentWrapper}>
