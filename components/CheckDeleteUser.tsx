@@ -10,7 +10,7 @@ export default function CheckDeleteUser  (props:any)  {
   const [email,setEmail] =useState<string>('');
   
   const deleteUserHandler = () => {
-    Axios.patch('http://13.125.205.76:500/mypage/Leave',{
+    Axios.patch('http://13.125.205.76:8080/mypage/Leave',{
       userId,
       password,
       email
