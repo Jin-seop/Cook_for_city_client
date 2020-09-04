@@ -22,6 +22,7 @@ export default function PostPage (props:any) {
         res.data
       )
       .then(data => {
+        setRecipeId(data.id);
         setMeterial(data.meterial.replace(/(\s*)/g, ""));
         setTitle(data.title);
         setRecipe(data.recipe.trim());
@@ -116,12 +117,11 @@ export default function PostPage (props:any) {
 
 
   useEffect(() => {
-    postDetail();
-    setRecipeId(props.navigation.state.params.id);
-    setUserid(props.navigation.state.params.userid);
     setTitle(props.navigation.state.params.title);
-  },[]);
-
+    setUserid(props.navigation.state.params.userid);
+    postDetail();
+  },[props.navigation.state.params]);
+  
   return(
 
     <ImageBackground source={WhiteBackgroundImage} style={style.backgroundImg} >
@@ -171,9 +171,6 @@ export default function PostPage (props:any) {
         </View>
 
         <View style={style.commentWrapper}> 
-          <TouchableOpacity style={style.commentReButton} onPress={()=> postDetail()}>
-            <Text>댓글 새로고침</Text>
-          </TouchableOpacity>
           {commentsHandler()}
         </View>
         
@@ -273,17 +270,6 @@ const style = StyleSheet.create({
     margin:1,
     alignItems:'center',
     justifyContent:'center'
-  },
-  commentReButton:{
-    width:100,
-    height:40,
-    left:150,
-    borderWidth:1,
-    borderRadius:5,
-    marginTop:10,
-    backgroundColor:'white',
-    justifyContent:'center',
-    alignItems:'center'
   },
   recipeTitleWrapper:{
     backgroundColor:'white',

@@ -25,7 +25,9 @@ export default function Mypage(props:any) {
           <TouchableOpacity 
             key={key} 
             style={style.favoriteListWrapper} 
-            onPress={() => props.navigation.navigate('PostPage',{title:data.title,userid:props.navigation.state.params.userid})}>
+            onPress={() => {
+              props.navigation.navigate('PostPage',{title:data.title});
+            }}>
             <Text>- {data.title}</Text>
           </TouchableOpacity>
         );
