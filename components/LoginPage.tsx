@@ -12,7 +12,7 @@ export default function LoginPage(props:any) {
   const userInfoHandler = () => {
     axios
       .post(
-        'http://13.125.205.76:50000/login/signin',
+        'http://13.125.205.76:500/login/signin',
         {
           userId,
           password: userPassword,

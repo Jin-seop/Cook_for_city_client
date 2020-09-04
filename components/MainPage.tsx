@@ -16,7 +16,7 @@ export default function MainPage(props:any) {
   const serchListHandler:any = () => {
     if(preSerch !== serch){
       setPreSerch(serch);
-      Axios.post('http://13.125.205.76:50000/recipe/recipesearch',{
+      Axios.post('http://13.125.205.76:500/recipe/recipesearch',{
         meterial:serch
       }).then(res => {
         setDataList(res.data);
@@ -44,7 +44,7 @@ export default function MainPage(props:any) {
 
   const seasonListHandler = () => {
     if(sessonList.length === 0 || sessonList !== sessonList){
-      Axios.get('http://13.125.205.76:50000/recipe/materials')
+      Axios.get('http://13.125.205.76:500/recipe/materials')
         .then(res => {
           setSessonList(res.data);
         });
@@ -62,7 +62,7 @@ export default function MainPage(props:any) {
   };
 
   const logoutHandler = () => {
-    Axios.post('http://13.125.205.76:50000/login/signout')
+    Axios.post('http://13.125.205.76:500/login/signout')
       .then(res => {
         if(res.status === 200){
           props.navigation.navigate('LoginPage');

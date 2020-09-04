@@ -31,7 +31,7 @@ export default function EditUserInfo(props:any) {
       return alert('이메일이 잘 못 되었습니다');
     }
     if(password === checkPassword){
-      Axios.put('13.125.205.76:50000/mypage/setupPut',{
+      Axios.put('13.125.205.76:500/mypage/setupPut',{
         email,
         userId,
         password

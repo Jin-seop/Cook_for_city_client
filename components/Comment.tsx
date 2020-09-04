@@ -13,7 +13,7 @@ export default function Comment(props:any) {
 
   const commentSendServerHandler = () => {
     if(userId){
-      Axios.put('http://13.125.205.76:50000/recipe/recipecommentupdate',{
+      Axios.put('http://13.125.205.76:500/recipe/recipecommentupdate',{
         id,
         userId,
         comment,
@@ -26,7 +26,7 @@ export default function Comment(props:any) {
           }
         });
     }else{
-      Axios.post('http://13.125.205.76:50000/recipe/recipecomment',{
+      Axios.post('http://13.125.205.76:500/recipe/recipecomment',{
         title,
         comment,
         starpoint

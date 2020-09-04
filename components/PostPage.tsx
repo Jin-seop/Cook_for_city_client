@@ -15,7 +15,7 @@ export default function PostPage (props:any) {
   const [userid,setUserid] = useState<string>('');
 
   const postDetail = () => {
-    Axios.post('http://13.125.205.76:50000/recipe/recipedetail',{
+    Axios.post('http://13.125.205.76:500/recipe/recipedetail',{
       title:props.navigation.state.params.title
     })
       .then(res => 
@@ -39,7 +39,7 @@ export default function PostPage (props:any) {
   };
   const favoritHandler =()=>{
     if(favorit === false){
-      Axios.post('http://13.125.205.76:50000/recipe/recipefavorites',{
+      Axios.post('http://13.125.205.76:500/recipe/recipefavorites',{
         id:recipeId
       }).then(res => {
         if(res.status === 201){
@@ -50,7 +50,7 @@ export default function PostPage (props:any) {
         .catch(err => console.error(err));
     }
     if(favorit === true){
-      Axios.put('http://13.125.205.76:50000/recipe/recipefavoritesdelete',{
+      Axios.put('http://13.125.205.76:500/recipe/recipefavoritesdelete',{
         id:recipeId
       })
         .then(res => {
