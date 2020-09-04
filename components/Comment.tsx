@@ -21,7 +21,7 @@ export default function Comment(props:any) {
       })
         .then(res => {
           if(res.status === 200){
-            props.navigation.navigate('PostPage');
+            props.navigation.navigate('PostPage',{post:true});
             alert('댓글 수정 완료');
           }
         });
@@ -33,7 +33,7 @@ export default function Comment(props:any) {
       })
         .then(res => {
           if(res.status === 201 ){
-            props.navigation.navigate('PostPage');
+            props.navigation.navigate('PostPage',{post:true});
             alert('댓글 등록 완료');
           }
         })
