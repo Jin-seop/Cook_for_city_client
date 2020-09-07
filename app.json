@@ -2,7 +2,12 @@
   "expo": {
     "name": "cookSiIn",
     "slug": "cookSiIn",
+    "scheme": "cooksiin",
     "version": "1.0.0",
+    "owner": "JinSeop",
+    "platforms": [
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -21,6 +26,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "com.cooksiin.cooksiinnana"
     }
   }
 }
