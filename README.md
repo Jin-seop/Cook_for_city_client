@@ -10,6 +10,23 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 # Status
 <img src="https://img.shields.io/badge/npm-v6.14.8-important?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/badge/node.js-v10.19.0-important?style=flat-square&logo=appveyor"> 
 
+# Getting Started
+
+**Using npm** :
+
+1. 이 repository를 **다운로드** or **Git Clone**받으십시오.
+
+2. 상위 디렉토리에 인스톨을 하십시오.
+
+   ```
+   $ npm install
+   ```
+3. 상위 디렉토리를 실행하십시오.
+
+      ```
+      $ npm start
+      ```
+
 # Dependencies
 Front-end
   - React Native
@@ -28,16 +45,18 @@ Back-end
   - PM2
   - cheerio
   
-# Creator
- ## Jongwan, Kim / back-end / leader
- - GMail: kjw900901@gmail.com
- - GitHub Id: @kimjongwan2
- ## Jinseop, shin / frontend / member
- - GMail: trun3361@gmail.com
- - GitHub Id: @Jin-seop
- ## giman, Lee / backend / member
- - GMail: giman979@gmail.com 
- - GitHub Id: leegiman911
+
+# :star:  Client 기능 Flow
+
+### [기능 flow 스키마 주소](https://www.figma.com/file/Kj3DCR0NaEdt9Suae6A4gg/CookSIIn?node-id=0%3A1)  
+![기능플로우](https://user-images.githubusercontent.com/64721060/92546526-bb01f680-f28d-11ea-8e8b-242efc5f22f3.png)
+
+# :star:  Server Flow chart
+![server 기능 flow](https://media.vlpt.us/images/giman789/post/d58fe772-1d45-47ba-a968-07e88cc21003/Untitled%20Diagram-Cooksiin.png)
+
+# :star:  DB Schema
+![db스키마](https://user-images.githubusercontent.com/64721060/91732870-cc8b3480-ebe3-11ea-9720-71af3351e938.png) 
+
 
 # What's included
 
@@ -49,7 +68,7 @@ Client/
     │   ├── EditUserInfo.tsx
     │   ├── LoginPage.tsx
     │   ├── MainPage.tsx
-    │   ├── MoveDoSiIN.tsx
+    │   ├── MoveDoSiIn.tsx
     │   ├── MyPage.tsx
     │   ├── PostPage.tsx
     │   ├── SignUp.tsx
@@ -69,3 +88,13 @@ Server/
         └── bootstrap.min.js.map
 ```
 
+# Creator
+ ## Jongwan, Kim / back-end / leader
+ - GMail: kjw900901@gmail.com
+ - GitHub Id: @kimjongwan2
+ ## Jinseop, shin / frontend / member
+ - GMail: trun3361@gmail.com
+ - GitHub Id: @Jin-seop
+ ## giman, Lee / backend / member
+ - GMail: giman979@gmail.com 
+ - GitHub Id: leegiman911
