@@ -8,6 +8,7 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 ![배경](https://user-images.githubusercontent.com/64721060/92548658-92303000-f292-11ea-953e-aca983973e6e.png)
 
 # :star: Status
+<a href="https://gitmoji.carloscuesta.me"> <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji?style=flat-square&logo=appveyor"> </a> <a href="https://github.com/codestates/Cook.Si.In-client"><img src ="https://img.shields.io/badge/github-Cook.Si.In-client-lightgrey?style=flat-square&logo=appveyor"></a>
 <img src="https://img.shields.io/badge/npm-v6.14.8-important?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/badge/node.js-v10.19.0-important?style=flat-square&logo=appveyor"> 
 
 # :star: Getting Started
@@ -122,7 +123,7 @@ Server/
         └── bootstrap.min.js.map
 ```
 
-# :star: Dependencies
+# :package: Dependencies
 Front-end
   - React Native
   - React Navigation
