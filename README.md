@@ -7,6 +7,9 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 
 ![배경](https://user-images.githubusercontent.com/64721060/92548658-92303000-f292-11ea-953e-aca983973e6e.png)
 
+# Status
+<img src="https://img.shields.io/badge/npm-v6.14.8-important?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/badge/node.js-v10.19.0-important?style=flat-square&logo=appveyor"> 
+
 # Dependencies
 Front-end
   - React Native
@@ -25,7 +28,7 @@ Back-end
   - PM2
   - cheerio
   
-# Made by
+# Creator
  ## Jongwan, Kim / back-end / leader
  - GMail: kjw900901@gmail.com
  - GitHub Id: @kimjongwan2
