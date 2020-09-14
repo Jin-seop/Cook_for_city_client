@@ -7,10 +7,10 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 
 ![배경](https://user-images.githubusercontent.com/64721060/92548658-92303000-f292-11ea-953e-aca983973e6e.png)
 
-# Status
+# :star: Status
 <img src="https://img.shields.io/badge/npm-v6.14.8-important?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/badge/node.js-v10.19.0-important?style=flat-square&logo=appveyor"> 
 
-# Getting Started
+# :star: Getting Started
 
 **Using npm** :
 
@@ -27,26 +27,7 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
       $ npm start
       ```
 
-# Dependencies
-Front-end
-  - React Native
-  - React Navigation
-  - TypeScript
-  - Expo
-  - Axios
-
-Back-end
-  - nodejs
-  - express
-  - sequelize
-  - mysql
-  - Amazon EC2
-  - AWS RDS
-  - PM2
-  - cheerio
-  
-
-# :star:  Client 기능 Flow
+# :star: Client Flow Chart
 
 ### [기능 flow 스키마 주소](https://www.figma.com/file/Kj3DCR0NaEdt9Suae6A4gg/CookSIIn?node-id=0%3A1)  
 ![기능플로우](https://user-images.githubusercontent.com/64721060/92546526-bb01f680-f28d-11ea-8e8b-242efc5f22f3.png)
@@ -57,9 +38,62 @@ Back-end
 # :star:  DB Schema
 ![db스키마](https://user-images.githubusercontent.com/64721060/91732870-cc8b3480-ebe3-11ea-9720-71af3351e938.png) 
 
+# About Service
+## :family:Users
+   - signin ✔️  
+      - get  
+      - req.body : userid, password
+   - signup :heavy_plus_sign:
+      - post
+      - req.body : userid, password, email
+   - signout :no_good:
+      - post
+      - destory
+   - idcheck ✔️ 
+      - post
+      - req.body : userid 
+ 
+## :pizza:Recipie
+   - metrerials :seedling:
+      - get
+   - recipesearch :telescope:
+      - post
+      - req.body : meterial
+   - recipedetail :mag:
+      - post
+      - req.body : title
+   - recipefavorites :heavy_plus_sign:
+      - post
+      - req.body : id 
+   - recipefavoritesdelete 🚫
+      - put 
+      - req.body : id
+   - recipecomment :heavy_plus_sign:
+      - post
+      - req.body : recipe.title, cookcomment.starpoint, cookcomment.comment
+   - recipecommentupdate ♻️ 
+      - put
+      - req.body : users.id, cookcomment.startpoint, cookcomment.comment
+   - admincommnetdelete 🚫
+      - put
+      - req.body : id  
 
-# What's included
+## :hearts:Mypage
+   - mypageGet ✔️
+      - get
+   - setupPut ♻️ 
+      - put
+      - req.body : email, userId, password
+   - Leave :no_good:
+      - patch
+   - mypagetocomment :rocket:
+      - post
+      - req.body : recipeid
+   - mypagetofavorites :rocket:
+      - post
+      - req.body : title
 
+# :star: What's included
 ```text
 Client/
 └── component/
@@ -88,13 +122,31 @@ Server/
         └── bootstrap.min.js.map
 ```
 
-# Creator
- ## Jongwan, Kim / back-end / leader
- - GMail: kjw900901@gmail.com
- - GitHub Id: @kimjongwan2
- ## Jinseop, shin / frontend / member
- - GMail: trun3361@gmail.com
- - GitHub Id: @Jin-seop
- ## giman, Lee / backend / member
- - GMail: giman979@gmail.com 
- - GitHub Id: leegiman911
+# :star: Dependencies
+Front-end
+  - React Native
+  - React Navigation
+  - TypeScript
+  - Expo
+  - Axios
+
+Back-end
+  - nodejs
+  - express
+  - sequelize
+  - mysql
+  - Amazon EC2
+  - AWS RDS
+  - PM2
+  - cheerio
+
+# :thumbsup: Creator
+ ## :boy: Jongwan, Kim / back-end / leader
+ - :envelope: GMail: kjw900901@gmail.com
+ - :id: GitHub Id: @kimjongwan2
+ ## :boy: Jinseop, shin / frontend / member
+ - :envelope: GMail: trun3361@gmail.com
+ - :id: GitHub Id: @Jin-seop
+ ## :boy: giman, Lee / backend / member
+ - :envelope: GMail: giman979@gmail.com 
+ - :id: GitHub Id: leegiman911
