@@ -18,6 +18,12 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 <img src="https://img.shields.io/badge/react_navigation-v^4.4.0-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/typescript-v^4.0.2-important?style=flat-square&logo=appveyor"> 
 
+<img src="https://img.shields.io/badge/express-v4.17.1-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/sequelize-v^6.3.4-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/mysql2-v^2.1.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/cheerio-v^1.0.0_rc.3-important?style=flat-square&logo=appveyor"> 
+
+
 # :bulb: Getting Started
 
 **Using npm** :
