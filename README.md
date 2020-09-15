@@ -13,9 +13,9 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 <img src="https://img.shields.io/badge/axios-v0.20.0-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/expo-v~38.0.8-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/react-v~16.11.0-important?style=flat-square&logo=appveyor"> 
-<img src="https://img.shields.io/badge/react-dom-v~16.11.0-important?style=flat-square&logo=appveyor"> 
-<img src="https://img.shields.io/badge/react-native-vhttps://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz-important?style=flat-square&logo=appveyor">
-<img src="https://img.shields.io/badge/react-navigation-v^4.4.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/react_dom-v~16.11.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/react_native-vhttps://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz-important?style=flat-square&logo=appveyor">
+<img src="https://img.shields.io/badge/react_navigation-v^4.4.0-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/typescript-v^4.0.2-important?style=flat-square&logo=appveyor"> 
 
 # :bulb: Getting Started
