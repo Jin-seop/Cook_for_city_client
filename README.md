@@ -51,7 +51,7 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 # :star:  DB Schema
 ![db스키마](https://user-images.githubusercontent.com/64721060/91732870-cc8b3480-ebe3-11ea-9720-71af3351e938.png) 
 
-# About Service
+# :key: About Service
 ### :family:Users
    - signin ✔️  
       - get  
@@ -162,9 +162,9 @@ Server/
  ## :boy: Jongwan, Kim / back-end / leader
  - :envelope: GMail: kjw900901@gmail.com
  - :id: GitHub Id: @kimjongwan2
- ## :boy: Jinseop, shin / frontend / member
+ ## :boy: Jinseop, shin / front-end / member
  - :envelope: GMail: trun3361@gmail.com
  - :id: GitHub Id: @Jin-seop
- ## :boy: giman, Lee / backend / member
+ ## :boy: giman, Lee / back-end / member
  - :envelope: GMail: giman979@gmail.com 
  - :id: GitHub Id: leegiman911
