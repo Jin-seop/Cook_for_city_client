@@ -10,8 +10,15 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 # :star: Status
 <a href="https://gitmoji.carloscuesta.me"> <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji?style=flat-square&logo=appveyor"> </a> <a href="https://github.com/codestates/Cook.Si.In-client"><img src ="https://img.shields.io/badge/github-Cook.Si.In-lightgrey?style=flat-square&logo=appveyor"></a>
 <img src="https://img.shields.io/badge/npm-v6.14.8-important?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/badge/node.js-v10.19.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/axios-v0.20.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/expo-v~38.0.8-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/react-v~16.11.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/react-dom-v~16.11.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/react-native-vhttps://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz-important?style=flat-square&logo=appveyor">
+<img src="https://img.shields.io/badge/react-navigation-v^4.4.0-important?style=flat-square&logo=appveyor"> 
+<img src="https://img.shields.io/badge/typescript-v^4.0.2-important?style=flat-square&logo=appveyor"> 
 
-# :star: Getting Started
+# :bulb: Getting Started
 
 **Using npm** :
 
@@ -40,7 +47,7 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 ![db스키마](https://user-images.githubusercontent.com/64721060/91732870-cc8b3480-ebe3-11ea-9720-71af3351e938.png) 
 
 # About Service
-## :family:Users
+### :family:Users
    - signin ✔️  
       - get  
       - req.body : userid, password
@@ -54,7 +61,7 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
       - post
       - req.body : userid 
  
-## :pizza:Recipie
+### :pizza:Recipie
    - metrerials :seedling:
       - get
    - recipesearch :telescope:
@@ -79,7 +86,7 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
       - put
       - req.body : id  
 
-## :hearts:Mypage
+### :hearts:Mypage
    - mypageGet ✔️
       - get
    - setupPut ♻️ 
@@ -94,7 +101,7 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
       - post
       - req.body : title
 
-# :star: What's included
+# :open_file_folder: What's included
 ```text
 Client/
 └── component/
@@ -111,27 +118,32 @@ Server/
     └── controller/
         ├── signin.js
         ├── signout.js
+        ├── signup.js
+        ├── checkid.js
         ├── Leave.js
         ├── mypageGet.js
-        ├── bootstrap.esm.js
-        ├── bootstrap.esm.js.map
-        ├── bootstrap.esm.min.js
-        ├── bootstrap.esm.min.js.map
-        ├── bootstrap.js
-        ├── bootstrap.js.map
-        ├── bootstrap.min.js
-        └── bootstrap.min.js.map
+        ├── mypagetocomment.js
+        ├── mypagetofavorites.js
+        ├── setupPut.js
+        ├── admincommentdelete.js
+        ├── meterials.js
+        ├── recipecomment.js
+        ├── recipecommentupdate.js
+        ├── recipefavorites.js
+        ├── recipefavoritesdelete.js
+        ├── recipesearch.js                        
+        └── recipedetail.js
 ```
 
 # :package: Dependencies
-Front-end
+ :memo: Front-end
   - React Native
   - React Navigation
   - TypeScript
   - Expo
   - Axios
 
-Back-end
+:memo: Back-end
   - nodejs
   - express
   - sequelize
