@@ -8,8 +8,16 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 ![배경](https://user-images.githubusercontent.com/64721060/92548658-92303000-f292-11ea-953e-aca983973e6e.png)
 
 # :star: Status
-<a href="https://gitmoji.carloscuesta.me"> <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji?style=flat-square&logo=appveyor"> </a> <a href="https://github.com/codestates/Cook.Si.In-client"><img src ="https://img.shields.io/badge/github-Cook.Si.In-lightgrey?style=flat-square&logo=appveyor"></a>
-<img src="https://img.shields.io/badge/npm-v6.14.8-important?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/badge/node.js-v10.19.0-important?style=flat-square&logo=appveyor"> 
+### common
+<a href="https://gitmoji.carloscuesta.me"> <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji?style=flat-square&logo=appveyor"> </a> 
+<img src="https://img.shields.io/badge/npm-v6.14.8-important?style=flat-square&logo=appveyor">
+
+<a href="https://github.com/codestates/Cook.Si.In-client"><img src ="https://img.shields.io/badge/github-Cook.Si.In_client-lightgrey?style=flat-square&logo=appveyor"></a>
+<a href="https://github.com/codestates/Cook.Si.In-server">
+<img src ="https://img.shields.io/badge/github-Cook.Si.In_server-lightgrey?style=flat-square&logo=appveyor"></a>
+
+
+### client
 <img src="https://img.shields.io/badge/axios-v0.20.0-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/expo-v~38.0.8-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/react-v~16.11.0-important?style=flat-square&logo=appveyor"> 
@@ -17,11 +25,15 @@ Cook.Si.In은 식재료를 검색하면 관련된 요리 레시피들이 나오�
 <img src="https://img.shields.io/badge/react_native-v^0.63.10-important?style=flat-square&logo=appveyor">
 <img src="https://img.shields.io/badge/react_navigation-v^4.4.0-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/typescript-v^4.0.2-important?style=flat-square&logo=appveyor">
+
+### server
+<img src="https://img.shields.io/badge/node.js-v10.19.0-important?style=flat-square&logo=appveyor"> 
 <img src="https://img.shields.io/badge/express-v4.17.1-important?style=flat-square&logo=appveyor">
 <img src="https://img.shields.io/badge/sequelize-v^6.3.4-important?style=flat-square&logo=appveyor">
 <img src="https://img.shields.io/badge/mysql2-v^2.1.0-important?style=flat-square&logo=appveyor">
 <img src="https://img.shields.io/badge/cheerio-v^1.0.0_rc.3-important?style=flat-square&logo=appveyor">
 
+---
 
 # :bulb: Getting Started
 
