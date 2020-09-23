@@ -3,7 +3,7 @@
     "name": "cookSiIn",
     "slug": "cookSiIn",
     "scheme": "cooksiin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "platforms": [
       "android"
     ],
@@ -27,6 +27,7 @@
       "favicon": "./assets/favicon.png"
     },
     "android": {
+      "versionCode": 2,
       "package": "com.cooksiin.cooksiinnana"
     }
   }
